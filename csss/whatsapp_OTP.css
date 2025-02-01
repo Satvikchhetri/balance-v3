@@ -1,0 +1,223 @@
+.rectangle-child {
+    position: absolute;
+    height: 101%;
+    width: 101.11%;
+    top: -0.5%;
+    right: -0.56%;
+    bottom: -0.5%;
+    left: -0.56%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 3px solid #fff;
+    box-sizing: border-box;
+}
+.an-otp-send {
+    white-space: pre-wrap;
+}
+.span {
+    color: #299c26;
+}
+.span1 {
+    color: rgba(255, 255, 255, 0.6);
+}
+.an-otp-send-on-your-whatsapp {
+    margin-block-start: 0;
+    margin-block-end: 12px;
+}
+.wrong-no {
+    margin: 0;
+    white-space: pre-wrap;
+}
+.text {
+    position: absolute;
+    top: 34.94%;
+    left: 13.52%;
+    line-height: 18px;
+    font-weight: 500;
+}
+.change-here {
+    text-decoration: underline;
+}
+.text1 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    line-height: 18px;
+    font-weight: 500;
+}
+.text-wrapper {
+    position: absolute;
+    top: 240px;
+    left: 164px;
+    width: 90px;
+    height: 18px;
+    color: #299c26;
+}
+.rectangle {
+    position: absolute;
+    top: calc(50% - 300.5px);
+    left: calc(50% - 270px);
+    width: 540px;
+    height: 601px;
+}
+.text2 {
+    position: absolute;
+    top: 127px;
+    left: 73px;
+    font-size: 28px;
+    line-height: 100%;
+    font-weight: 600;
+    font-family: Poppins;
+    color: #299c26;
+}
+.sign-up1 {
+    position: relative;
+    line-height: 18px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #fff;
+}
+.button-select {
+    width: 396px;
+    border-radius: 7px;
+    background-color: #299c26;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.component-64 {
+    position: absolute;
+    top: calc(50% + 60.5px);
+    left: calc(50% - 198px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+.text3 {
+    position: relative;
+    line-height: 18px;
+    font-weight: 500;
+}
+.input {
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 20px);
+    right: 0%;
+    left: 0%;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 14px;
+    box-sizing: border-box;
+}
+.mobile-no-inner {
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 20px);
+    right: 0%;
+    left: 0%;
+    height: 40px;
+}
+.mobile-no {
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 20px);
+    right: 0%;
+    left: 0%;
+    border-radius: 7px;
+    background-color: #0e1527;
+    height: 40px;
+}
+.button-select1 {
+    position: absolute;
+    top: calc(50% - 6.5px);
+    left: calc(50% - 198px);
+    border-radius: 7px;
+    width: 396px;
+    height: 40px;
+}
+.rectangle-parent {
+    position: absolute;
+    top: calc(50% - 324px);
+    left: calc(50% - 270px);
+    width: 540px;
+    height: 601px;
+}
+.sign-up-child {
+    position: absolute;
+    top: 76.63px;
+    left: 632.64px;
+    width: 247px;
+    height: 43px;
+}
+.frame-child {
+    width: 150px;
+    position: relative;
+    height: 40px;
+    object-fit: cover;
+}
+.sign-up-inner {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.sign-up-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1512px;
+    height: 982px;
+}
+.whtsapp-otp {
+    width: 100%;
+    position: relative;
+    height: 982px;
+    text-align: left;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Inter;
+}
+
+.verify-button {
+    width: 396px;
+    height: 40px;
+    background-color: #299c26; /* Green background */
+    color: white; /* White text */
+    font-weight: bold; /* Bold text */
+    font-size: 14px; /* Font size */
+    text-align: center; /* Center the text */
+    border: none; /* Remove default border */
+    border-radius: 7px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Shadow effect */
+}
+
+.verify-button:focus {
+    outline: none; /* Remove focus outline */
+}
+
+.verify-button:hover {
+    background-color: #268e22; /* Slightly darker green on hover */
+}
+
+body {
+    margin: 0;
+    line-height: normal;
+}
+

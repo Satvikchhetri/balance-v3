@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Detected Message</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0F172A; /* Dark background */
+            font-family: Arial, sans-serif;
+            color: #8e3f3f;
+        }
+        .message-box {
+            text-align: center;
+            background:#0F172A; /* Slightly lighter dark color */
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Subtle shadow for elevation */
+        }
+        .message-box p {
+            font-size: 1.2rem;
+            color: #4285f4; /* Blue text */
+            margin: 0 0 20px;
+        }
+        .message-box button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            background-color: #e0e0e0; /* Light grey button background */
+            color: #000; /* Black text for the button */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .message-box button:hover {
+            background-color: #c0c0c0; /* Darker grey on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <p>Account detected successfully.</p>
+        <button onclick="closeMessage()">Close</button>
+    </div>
+
+    <script>
+        function closeMessage() {
+            alert("Message box closed."); // Replace with actual close functionality
+        }
+    </script>
+</body>
+</html>

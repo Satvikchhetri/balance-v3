@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Permissions</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #282c34;
+            color: #fff;
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .sidebar {
+            background-color: #3e4451;
+            width: 60px; /* Adjust sidebar width as needed */
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .sidebar-icon{
+            width: 30px;
+            height: 30px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .container {
+            background-color: #3e4451;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px; /* Space between sidebar and container */
+            flex-grow: 1; /* Allow container to take up available space */
+            position: relative;
+        }
+
+        .table-container {
+            display: flex;
+            width: 100%;
+        }
+
+        .column {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .column:first-child {
+            border-right: 1px solid #525969;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            display: flex;
+        }
+
+        .user-info input {
+            background-color: #525969;
+            border: none;
+            padding: 5px;
+            margin-right: 10px;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #525969;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        .actions {
+            text-align: center;
+        }
+
+        .actions input[type="checkbox"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .actions input[type="checkbox"]:checked::before {
+            content: '\2713';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 40px);
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .footer button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .footer button.close {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="placeholder-profile.png" alt="User Avatar">
+        <img class="sidebar-icon" src="placeholder-icon.png">
+        <img class="sidebar-icon" src="placeholder-icon.png">
+        <img class="sidebar-icon" src="placeholder-icon.png">
+        <img class="sidebar-icon" src="placeholder-icon.png">
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="user-info">
+                <input type="text" placeholder="Enter User name">
+                <input type="text" placeholder="Designation">
+            </div>
+        </div>
+        <div class="table-container">
+            <div class="column">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Menu</th>
+                            <th>View</th>
+                            <th>Add</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Transaction menu</td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Report</td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Accounts Group</td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Dashboard</td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Setting</td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Inventory</td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Full Access</td>
+                            <td class="actions"><input type="checkbox" checked></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="column">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Update</th>
+                            <th>Delete</th>
+                            <th>Share</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                            <td class="actions"><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <button>Invite</button>
+            <button class="close">Close</button>
+        </div>
+    </div>
+
+</body>
+</html>

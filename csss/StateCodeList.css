@@ -1,0 +1,123 @@
+.table-cell14 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 3px;
+    background-color: #0f172a;
+    border: 0.3px solid #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.group-wrapper11 {
+    position: absolute;
+    height: 89.42%;
+    width: 100%;
+    top: 10.58%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+}
+.text44 {
+    position: absolute;
+    top: 9px;
+    left: 13px;
+}
+.icon6 {
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 259px;
+    width: 9px;
+    height: 4px;
+    object-fit: contain;
+}
+.table-cell15 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 3px;
+    background-color: #0f172a;
+    overflow: hidden;
+}
+.group-wrapper13 {
+    position: absolute;
+    height: 10.08%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 89.92%;
+    left: 0%;
+}
+.group-wrapper10 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+}
+.month-list-group {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 282px;
+    height: 397px;
+}
+.text45 {
+    position: relative;
+    line-height: 20px;
+}
+.text-wrapper14 {
+    width: 269px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3px 10px;
+    box-sizing: border-box;
+}
+.text-wrapper20 {
+    width: 269px;
+    background-color: #1b2335;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3px 10px;
+    box-sizing: border-box;
+    color: #fff;
+}
+.instance-parent {
+    position: absolute;
+    top: 45px;
+    left: calc(50% - 135px);
+    width: 269px;
+    height: 351px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3px;
+}
+.state-code-list {
+    width: 282px;
+    position: relative;
+    height: 397px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    text-align: left;
+    font-size: 14px;
+    color: #3e507b;
+    font-family: Inter;
+}
+

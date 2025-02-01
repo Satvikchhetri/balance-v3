@@ -1,0 +1,412 @@
+.text {
+    position: relative;
+    line-height: 18px;
+}
+/* Base Button Style */
+.button-select {
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% + 83px);  /* Adjusted to move the button a bit to the right */
+    border-radius: 4px;
+    background: linear-gradient(180deg, #fff, #c1c1c1 60.76%, #999);
+    width: 100px;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 35px;
+    box-sizing: border-box;
+    font-weight: bold;  /* Ensures the text is bold */
+    white-space: nowrap;  /* Prevents the text from wrapping to a new line */
+    transition: all 0.3s ease;
+}
+
+.button-select:hover {
+    background: linear-gradient(180deg, #135292, #208cf8);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.button-select:active {
+    transform: translateY(1px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+ .button-select1, .button-select2, .button-select3 {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #208cf8; /* Default Blue */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.button-select:hover, .button-select1:hover, .button-select2:hover, .button-select3:hover {
+    transform: translateY(-2px); /* Lifts the button up slightly */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds subtle shadow */
+}
+
+.button-select:active, .button-select1:active, .button-select2:active, .button-select3:active {
+    transform: translateY(1px); /* Subtle down movement on click */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle click shadow */
+}
+
+.button-select {
+    background: linear-gradient(180deg, #fff, #c1c1c1 60.76%, #999);
+    width: 100px;
+    height: 36px;
+    border-radius: 4px;
+    padding: 11px 35px;
+}
+
+.button-select:hover {
+    background: linear-gradient(180deg, #135292, #208cf8); /* Darker gradient on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+.button-select1 {
+    width: 396px;
+    border-radius: 7px;
+    background: linear-gradient(180deg, #208cf8, #135292);
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 15px;
+}
+
+.button-select1:hover {
+    background: linear-gradient(180deg, #135292, #208cf8);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+.button-select2 {
+    border: 1px solid #299c26;
+    color: #299c26;
+    background-color: transparent;
+    width: 182px;
+    height: 42px;
+    border-radius: 7px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.button-select2:hover {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0px 4px 10px rgba(41, 156, 38, 0.2);
+    transform: scale(1.05);
+}
+.button-select3 {
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    width: 182px;
+    height: 42px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.button-select3:hover {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+.button-select1:hover, .button-select2:hover {
+    box-shadow: 0 0 10px rgba(32, 140, 248, 0.8); /* Adds glow to the button */
+    transform: scale(1.05); /* Slightly increases size on hover */
+}
+.button-select:active, .button-select1:active, .button-select2:active, .button-select3:active {
+    transform: translateY(2px); /* Button moves down slightly on click */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dont-have-an {
+    position: absolute;
+    top: 8px;
+    left: 0px;
+    font-size: 20px;
+    line-height: 98%;
+    font-weight: 300;
+    font-family: Poppins;
+    color: #fff;
+    text-align: left;
+}
+.button-select-parent {
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% - 183px);
+    width: 366px;
+    height: 36px;
+}
+.sign-up-inner {
+    position: absolute;
+    top: calc(50% + 369px);
+    left: calc(50% - 183px);
+    width: 366px;
+    height: 36px;
+}
+.rectangle-child {
+    position: absolute;
+    height: 101%;
+    width: 101.11%;
+    top: -0.5%;
+    right: -0.56%;
+    bottom: -0.5%;
+    left: -0.56%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 3px solid #fff;
+    box-sizing: border-box;
+}
+.sign-up1 {
+    position: relative;
+    line-height: 18px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.button-select1 {
+    width: 396px;
+    border-radius: 7px;
+    background: linear-gradient(180deg, #208cf8, #135292);
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.component-64 {
+    position: absolute;
+    height: 6.66%;
+    width: 73.33%;
+    top: 43.26%;
+    right: 13.33%;
+    bottom: 50.08%;
+    left: 13.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.text1 {
+    position: relative;
+    line-height: 18px;
+    font-weight: 500;
+    white-space: pre-wrap;
+}
+.content {
+    position: absolute;
+    top: 11px;
+    left: 14px;
+    width: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.text-box-child {
+    position: absolute;
+    top: 5.5px;
+    left: 66.5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
+    width: 1px;
+    height: 29px;
+}
+.text2 {
+    position: absolute;
+    top: 11px;
+    left: 85px;
+    line-height: 18px;
+    font-weight: 500;
+}
+#mobileError {
+    position: absolute;
+    top: 6px;
+    left: 310px;
+    font-size: 10px;
+    line-height: 24px;
+    color: #ff0101;
+}
+.text-box {
+    position: absolute;
+    height: 6.66%;
+    width: 73.33%;
+    top: 30.62%;
+    right: 13.33%;
+    bottom: 62.73%;
+    left: 13.33%;
+    border-radius: 7px;
+    background-color: #0e1527;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.6);
+}
+.rectangle {
+    position: absolute;
+    top: calc(50% - 300.5px);
+    left: calc(50% - 270px);
+    width: 540px;
+    height: 601px;
+}
+.text3 {
+    position: absolute;
+    top: 41px;
+    left: 72px;
+    font-size: 28px;
+    line-height: 100%;
+    font-weight: 600;
+    font-family: Poppins;
+    color: #208cf8;
+    text-align: left;
+}
+.text4 {
+    position: absolute;
+    top: 95px;
+    left: 72px;
+    font-size: 16px;
+    line-height: 100%;
+    font-family: Poppins;
+    text-align: left;
+}
+.whatsapp {
+    position: absolute;
+    top: 11px;
+    left: 56px;
+    line-height: 18px;
+    color: #299c26;
+}
+.image-255-icon {
+    position: absolute;
+    height: 75%;
+    width: 16.67%;
+    top: 12.5%;
+    right: 77.78%;
+    bottom: 12.5%;
+    left: 5.56%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+.button-select2 {
+    position: absolute;
+    top: 501px;
+    left: 287px;
+    border-radius: 7px;
+    border: 1px solid #299c26;
+    box-sizing: border-box;
+    width: 182px;
+    height: 42px;
+    cursor: pointer;
+    color: #299c26;
+}
+.google {
+    position: absolute;
+    top: 11px;
+    left: 68px;
+    line-height: 18px;
+}
+.image-icon {
+    position: absolute;
+    height: 75%;
+    width: 16.67%;
+    top: 12.5%;
+    right: 76.67%;
+    bottom: 12.5%;
+    left: 6.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+.button-select3 {
+    position: absolute;
+    top: 501px;
+    left: 71px;
+    border-radius: 7px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    width: 182px;
+    height: 42px;
+    cursor: pointer;
+}
+.text5 {
+    position: absolute;
+    top: 453px;
+    left: 186px;
+    font-size: 20px;
+    line-height: 18px;
+}
+.rectangle-parent {
+    position: absolute;
+    top: calc(50% - 301px);
+    left: calc(50% - 270px);
+    width: 540px;
+    height: 601px;
+    color: #fff;
+}
+.sign-up-child {
+    position: absolute;
+    top: 107.63px;
+    left: 642.64px;
+    width: 247px;
+    height: 43px;
+}
+.frame-child {
+    width: 150px;
+    position: relative;
+    height: 40px;
+    object-fit: cover;
+}
+.frame-div {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.sign-up-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1512px;
+    height: 982px;
+}
+.log-in {
+    width: 100%;
+    position: relative;
+    height: 982px;
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    font-family: Inter;
+}
+
+
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+.text6 {
+    position: absolute;
+    top: 11px;
+    left: 85px;
+    line-height: 18px;
+    font-weight: 500;
+}
