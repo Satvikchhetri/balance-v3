@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0A1326;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 60px;
+            background-color: #112233;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            justify-content: flex-end;
+        }
+        .sidebar button {
+            background: none;
+            border: none;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+        .sidebar button img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .container {
+            width: calc(100% - 60px);
+            max-width: 800px;
+            background-color: #1D2D3D;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-left: 90px;
+        }
+        .account-list {
+            margin-top: 20px;
+        }
+        .account-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .account-list th, .account-list td {
+            padding: 10px;
+            border: 1px solid #545F71;
+        }
+        .account-list th {
+            background-color: #14A9B233;
+        }
+        .account-list td {
+            background-color: #1D2D3D;
+        }
+        thead th:nth-child(2),
+        thead th:nth-child(3) {
+            color:#FFB620;
+        }
+        input[type="checkbox"]:checked {
+            accent-color: #5E5ADB;
+        }
+        .footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer span {
+            font-size: 0.9em;
+        }
+        .footer button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 800px;
+            background-color: #0A1326;
+            padding: 10px;
+            border-radius: 5px;
+            margin-left: 7%;
+            margin-top: 8%;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            flex-grow: 1;
+        }
+        .search-bar label {
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .search-bar input[type="radio"] {
+            margin-right: 5px;
+        }
+        .name-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            margin-right: 10px;
+        }
+        .name-cell {
+            display: flex;
+            align-items: center;
+        }
+        input[type="checkbox"] {
+            position: relative;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+        }
+        input[type="checkbox"]:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+        input[type="checkbox"]:active:before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button><img src="back-icon.png" alt="Back"></button>
+        <button><img src="profile-icon.png" alt="Profile"></button>
+    </div>
+    <div class="main-content">
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <label><input type="radio" name="search-option" id="group"> Group</label>
+            <label><input type="radio" name="search-option" id="accounts"> Accounts</label>
+        </div>
+        <div class="container">
+            <div class="account-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="select-all" class="select-item"></th>
+                            <th>Account Name</th>
+                            <th>Master</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" class="select-item"></td>
+                            <td class="name-cell"><div class="name-icon">RF</div>Robert Fox</td>
+                            <td>Customer</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="select-item" checked></td>
+                            <td class="name-cell"><div class="name-icon">BC</div>Bessie Cooper</td>
+                            <td>Customer</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="select-item" checked></td>
+                            <td class="name-cell"><div class="name-icon">EP</div>Eleanor Pena</td>
+                            <td>Customer</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="select-item" checked></td>
+                            <td class="name-cell"><div class="name-icon">LA</div>Leslie Alexander</td>
+                            <td>Suppliers</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="select-item"></td>
+                            <td class="name-cell"><div class="name-icon">JC</div>Jane Cooper</td>
+                            <td>Suppliers</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="select-item"></td>
+                            <td class="name-cell"><div class="name-icon">AB</div>Annette Black</td>
+                            <td>Suppliers</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="select-item"></td>
+                            <td class="name-cell"><div class="name-icon">CF</div>Cody Fisher</td>
+                            <td>Suppliers</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="select-item"></td>
+                            <td class="name-cell"><div class="name-icon">MM</div>Marvin McKinney</td>
+                            <td>Assets</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="select-item"></td>
+                            <td class="name-cell"><div class="name-icon">FM</div>Floyd Miles</td>
+                            <td>Assets</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="select-item"></td>
+                            <td class="name-cell"><div class="name-icon">AM</div>Arlene McCoy</td>
+                            <td>Capital</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer">
+                <span>10 out of 35 accounts selected</span>
+                <button>Add</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('select-all').addEventListener('change', function() {
+            const checkboxes = document.querySelectorAll('.select-item');
+            checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+        });
+    </script>
+</body>
+</html>

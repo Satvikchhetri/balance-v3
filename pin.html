@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create PIN</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0A1326;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #142A52;
+      border: 2px solid #375A94;
+      border-radius: 10px;
+      width: 600px;
+      padding: 20px 30px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    }
+    .container h2 {
+      margin: 0 0 20px;
+      font-size: 20px;
+      color: #fff;
+      border-bottom: 2px solid #375A94;
+      padding-bottom: 10px;
+    }
+    .input-group, .checkbox-group, .buttons, .info {
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #375A94;
+      border-radius: 5px;
+      background-color: #1D355A;
+      color: #fff;
+      font-size: 16px;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .checkbox-group input[type="checkbox"] {
+      margin-right: 8px;
+    }
+    .checkbox-group label {
+      color: #FFC107;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+    .buttons a {
+      text-decoration: none;
+      display: inline-block;
+    }
+    .buttons button {
+      padding: 10px 80px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .buttons .create {
+      padding: 10px 120px;
+      background: linear-gradient(180deg, #208cf8, #135292);
+      color: #fff;
+    }
+    .buttons .create:hover {
+      background: linear-gradient(180deg, #135292, #208cf8);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+    
+    .buttons .skip {
+      padding: 10px 96px;
+      background: linear-gradient(180deg, #fff, #999);
+    width: auto;
+      color: #000;
+    }
+    .buttons .skip:hover {
+      background: linear-gradient(180deg, #135292, #208cf8);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    }
+    .info {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #FFC107;
+      border-radius: 5px;
+      font-size: 14px;
+      color: #000;
+      text-align: center;
+      border: 1px solid #375A94;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Create PIN</h2>
+    <div class="input-group">
+      <label for="pin">PIN</label>
+      <input type="text" id="pin" name="pin" placeholder="Enter your PIN">
+    </div>
+    <div class="input-group">
+      <label for="confirm-pin">Confirm PIN</label>
+      <input type="text" id="confirm-pin" name="confirm-pin" placeholder="Re-enter your PIN">
+    </div>
+    <div class="checkbox-group">
+      <input type="checkbox" id="include-letters">
+      <label for="include-letters">Include letters and symbols</label>
+    </div>
+    <div class="buttons">
+      <a href="select company.html"><button class="create">Create</button></a>
+      <a href="select company.html"><button class="skip">Skip for now</button></a>
+    </div>
+    <div class="info">
+      You can set PIN later in Settings menu / Company settings / PIN.
+    </div>
+  </div>
+
+  <script>
+    const pinInput = document.getElementById('pin');
+    const confirmPinInput = document.getElementById('confirm-pin');
+    const includeLettersCheckbox = document.getElementById('include-letters');
+
+    function toggleInputRestriction() {
+      if (includeLettersCheckbox.checked) {
+        pinInput.removeEventListener('input', restrictToNumbers);
+        confirmPinInput.removeEventListener('input', restrictToNumbers);
+      } else {
+        pinInput.addEventListener('input', restrictToNumbers);
+        confirmPinInput.addEventListener('input', restrictToNumbers);
+      }
+    }
+
+    function restrictToNumbers(event) {
+      event.target.value = event.target.value.replace(/[^0-9]/g, '');
+    }
+
+    includeLettersCheckbox.addEventListener('change', toggleInputRestriction);
+    toggleInputRestriction(); // Set the initial restriction state
+  </script>
+</body>
+</html>

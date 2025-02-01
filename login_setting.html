@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form UI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a1124; /* Matches the dark background */
+      color: #ffffff;
+    }
+    .container {
+      display: flex;
+      justify-content: flex-start; /* Align to the start horizontally */
+      align-items: flex-start; /* Align to the start vertically */
+      height: 60vh;
+      padding: 50px; /* Add padding to avoid touching the edges */
+      border-radius: 10px; /* Add border radius to the container */
+    }
+    .form-box {
+      background-color: #101a30; /* Matches the form background */
+      padding: 50px;
+      border-radius: 10px;
+      border: 5px solid #208CF8; /* Add border to the form box */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+      width: 380px; /* Increase width by 40% */
+      height: auto; /* Adjust height to fit content */
+      position: relative; /* For positioning the profile heading */
+    }
+    .form-box h3 {
+      color: #ffffff;
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border: 2px solid #1e2c4a; /* Add border to the company name */
+      background-color: #1F3261; /* Change background color */
+      padding: 10px;
+      border-radius: 10px;
+      position: absolute; /* Position at the top */
+      top: 0px; /* Adjust top position */
+      left: 1px; /* Adjust left position */
+      width: calc(100% - 30px); /* Adjust width */
+    }
+    .form-group {
+      margin-bottom: 30px; /* Adjust margin for spacing */
+    }
+    .form-group label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+      color: #9ab6d3;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #1b2746; /* Dark input background */
+      border: 1px solid #293b58;
+      color: #ffffff;
+      font-size: 14px;
+      border-radius: 100px;
+    }
+    .form-group a {
+      font-size: 12px;
+      color: #5099f7; /* Matches "Change" button color */
+      text-decoration: none;
+      float: right;
+      margin-top: 5px;
+    }
+    .form-group a:hover {
+      text-decoration: underline;
+    }
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 150px;
+    }
+    .form-buttons button {
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .save-button {
+      background-color:#dae7fb; /* Bright blue save button */
+      color: #000000;
+    }
+    .save-button:hover {
+      background-color: #427ed0;
+      color: #ffffff; /* Slightly darker on hover */
+    }
+    .close-button {
+      background-color: #dae7fb; /* Grey Close button */
+      color: #000000;
+    }
+    .close-button:hover {
+      background-color: #208CF8;
+      color: #ffffff; /* Slightly darker grey */
+    }
+    .delete-account {
+      margin-top: 180px; /* Adjust margin for spacing */
+      text-align: left;
+      padding-left: 50px
+    }
+    .delete-account button {
+      background-color: #f70404; /* Bright red button */
+      border: none;
+      color: #ffffff;
+      padding: 10px 30px;
+      font-size: 14px;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .delete-account button:hover {
+      background-color: #b83030; /* Darker red on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h3>Profile</h3>
+      <div class="form-group" style="margin-top: 80px;">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" value="MANZ MAN">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" value="ABCD@AVC.COM">
+        <a href="#">Change</a>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile No.</label>
+        <input type="tel" id="mobile" value="+91 | 123456789">
+        <a href="#">Change</a>
+      </div>
+      <div class="form-buttons">
+        <button class="save-button">Save</button>
+        <button class="close-button">Close</button>
+      </div>
+    </div>
+  </div>
+  <div class="delete-account">
+    <button>Delete Account</button>
+  </div>
+</body>
+</html>

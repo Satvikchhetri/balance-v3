@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="csss/after_sign_in.css" />
+    <title>Loading...</title>
+</head>
+<body>
+    <div class="after-sign-in">
+        <div class="signup">
+            <div class="signup-child">
+                <!-- Video Element (Center of Screen) -->
+                <div class="comp-1-1">
+                    <video class="loading-video" autoplay muted loop>
+                        <source src="loading.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get URL query parameters
+        const params = new URLSearchParams(window.location.search);
+        const action = params.get('action'); // 'signup' or 'login'
+
+        // Determine redirect URL based on the action
+        let redirectUrl = '';
+        if (action === 'signup') {
+            redirectUrl = 'after_sign_up.html'; // Replace with your sign-up redirect URL
+        } else if (action === 'login') {
+            redirectUrl = 'OTP_Sign_up.html'; // Replace with your login redirect URL
+            
+        } else if (action === 'verify') {
+            redirectUrl = 'after_sign_up.html'; // Replace with your login redirect URL {
+
+        }else if (action === 'whatsapp') {
+            redirectUrl = 'whatsapp_otp.html'; // Replace with your login redirect URL {
+
+        }else if (action === 'wverify') {
+            redirectUrl = 'after_sign_up.html'; // Replace with your login redirect URL {
+
+        }
+        else {
+            redirectUrl = 'default.html'; // Fallback URL
+        }
+
+        // Redirect to the target page after 3 seconds
+        setTimeout(() => {
+            window.location.href = redirectUrl;
+        }, 3000);
+    </script>
+</body>
+</html>

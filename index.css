@@ -1,0 +1,448 @@
+.vector-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1512px;
+    height: 982px;
+}
+.frame-child {
+    width: 150px;
+    position: relative;
+    height: 40px;
+    object-fit: cover;
+}
+.sign-up-inner {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.text {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 100%;
+    font-weight: 600;
+}
+.text-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 362px;
+    height: 28px;
+    font-size: 28px;
+    color: #ffb620;
+}
+.text1 {
+    position: relative;
+    line-height: 18px;
+}
+.button-select {
+    position: absolute;
+    top: 58px;
+    left: 145px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #fff, #999);
+    width: auto;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    font-family: Inter;
+    font-weight: bold;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-select:hover {
+    background: linear-gradient(180deg, #135292, #208cf8);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.button-select:active {
+    transform: translateY(1px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button-select1 {
+    width: 396px;
+    border-radius: 7px;
+    background: linear-gradient(180deg, #208cf8, #135292);
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-select1:hover {
+    
+    background: linear-gradient(180deg, #135292, #208cf8);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.button-select1:active {
+    transform: translateY(1px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.button-select2, .button-select3 {
+    position: absolute;
+    top: 507px;
+    border-radius: 7px;
+    width: 182px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-select2 {
+    left: 277px;
+    border: 1px solid #299c26;
+    color: #299c26;
+    background: transparent;
+}
+
+.button-select2:hover {
+    transform: scale(1.05); /* Add scale effect */
+    box-shadow: 0px 4px 10px rgba(41, 156, 38, 0.2); /* Add box-shadow */
+    background-color: #fff; /* Add background color on hover */
+}
+
+.button-select3 {
+    left: 61px;
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+}
+
+.button-select3:hover {
+    transform: scale(1.05); /* Add scale effect */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2); /* Add box-shadow */
+    background-color: white; /* Add background color on hover */
+    color: #000; /* Change text color to black */
+}
+
+
+.or {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 98%;
+    font-weight: 500;
+}
+.or-wrapper {
+    position: absolute;
+    top: 124px;
+    left: 169px;
+    width: 24px;
+    height: 20px;
+    font-size: 20px;
+}
+.image-225-icon {
+    position: absolute;
+    top: 174px;
+    left: 78px;
+    border-radius: 10px;
+    width: 206px;
+    height: 198px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.text2 {
+    position: absolute;
+    top: 402px;
+    left: 0px;
+    line-height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 362px;
+}
+.open-balance-app {
+    margin-bottom: 0px;
+}
+.open-balance-app-on-your-phone {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding-left: 21px;
+}
+.open-balance-app-container {
+    position: absolute;
+    top: 430px;
+    left: 18px;
+    line-height: 148%;
+}
+.group-parent {
+    position: absolute;
+    top: 226px;
+    left: 921px;
+    width: 362px;
+    height: 502px;
+}
+.rectangle-child {
+    position: absolute;
+    height: 101%;
+    width: 101.11%;
+    top: -0.5%;
+    right: -0.56%;
+    bottom: -0.5%;
+    left: -0.56%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 3px solid #fff;
+    box-sizing: border-box;
+}
+.text3 {
+    position: absolute;
+    top: 48px;
+    left: 61px;
+    font-size: 28px;
+    line-height: 100%;
+    font-weight: 600;
+    font-family: Poppins;
+    color: #208cf8;
+}
+.text4 {
+    position: absolute;
+    top: 103px;
+    left: 61px;
+    font-size: 16px;
+    line-height: 100%;
+    font-family: Poppins;
+}
+.sign-up1 {
+    position: relative;
+    line-height: 18px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.button-select1 {
+    width: 396px;
+    border-radius: 7px;
+    background: linear-gradient(180deg, #208cf8, #135292);
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.component-64 {
+    position: absolute;
+    top: calc(50% + 7.5px);
+    left: calc(50% - 209px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.text5 {
+    position: relative;
+    line-height: 18px;
+    font-weight: 500;
+    white-space: pre-wrap;
+}
+.content {
+    position: absolute;
+    top: 11px;
+    left: 14px;
+    width: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.text-box-child {
+    position: absolute;
+    top: 5.5px;
+    left: 66.5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
+    width: 1px;
+    height: 29px;
+}
+.text6 {
+    position: absolute;
+    top: 6px;
+    left: 85px;
+    line-height: 18px;
+    font-weight: 500;
+}
+.can-not-empty {
+    position: absolute;
+    top: 6px;
+    left: 310px;
+    font-size: 10px;
+    line-height: 24px;
+    color: #ff0101;
+}
+.text-box {
+    position: absolute;
+    top: calc(50% - 80.5px);
+    left: calc(50% - 209px);
+    border-radius: 7px;
+    background-color: #0e1527;
+    width: 396px;
+    height: 40px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.content1 {
+    position: absolute;
+    top: 11px;
+    left: 14px;
+    width: 25px;
+    height: 18px;
+}
+.text7 {
+    position: absolute;
+    top: 11px;
+    left: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    white-space: pre-wrap;
+}
+.can-not-empty1 {
+    position: absolute;
+    top: 8px;
+    left: 310px;
+    font-size: 10px;
+    line-height: 24px;
+    color: #ff0101;
+}
+.text-box1 {
+    position: absolute;
+    top: calc(50% - 147.5px);
+    left: calc(50% - 209px);
+    border-radius: 7px;
+    background-color: #0e1527;
+    width: 396px;
+    height: 40px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.whatsapp {
+    position: absolute;
+    top: 11px;
+    left: 56px;
+    line-height: 18px;
+    color: #299c26;
+}
+.image-255-icon {
+    position: absolute;
+    height: 75%;
+    width: 16.67%;
+    top: 12.5%;
+    right: 77.78%;
+    bottom: 12.5%;
+    left: 5.56%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.google {
+    position: absolute;
+    top: 11px;
+    left: 68px;
+    line-height: 18px;
+}
+.image-icon {
+    position: absolute;
+    height: 75%;
+    width: 16.67%;
+    top: 12.5%;
+    right: 76.67%;
+    bottom: 12.5%;
+    left: 6.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.text8 {
+    position: absolute;
+    top: 458px;
+    left: 192px;
+    font-size: 20px;
+    line-height: 18px;
+    text-align: center;
+}
+.rectangle-parent {
+    position: absolute;
+    top: calc(50% - 300.5px);
+    left: calc(50% - 270px);
+    width: 540px;
+    height: 601px;
+}
+.sign-up-child {
+    position: absolute;
+    top: calc(50% - 314px);
+    left: calc(50% - 569px);
+    width: 540px;
+    height: 601px;
+    font-size: 14px;
+    font-family: Inter;
+}
+
+.sign-up-item {
+    position: absolute;
+    top: 96.63px;
+    left: 330.64px;
+    width: 247px;
+    height: 43px;
+}
+.frame-div {
+    position: absolute;
+    top: 483px;
+    left: 1041px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+.sign-up {
+    width: 100%;
+    position: relative;
+    height: 982px;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Poppins;
+}
+
+
+body {
+    margin: 0;
+    line-height: normal;
+}
+

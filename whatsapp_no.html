@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="csss/whatsapp_no.css">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" />
+    <style>
+        .text-box {
+            position: absolute;
+            top: calc(50% - 108.5px);
+            left: calc(50% - 198px);
+            border-radius: 7px;
+            background-color: #0e1527;
+            width: 396px;
+            height: 40px;
+            font-size: 14px;
+            font-family: Inter;
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            color: #299c26;
+            position: relative;
+        }
+
+        .country-code {
+            color: #299c26;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+
+        .text-input {
+            border: none;
+            background: transparent;
+            color: #299c26;
+            font-family: Inter, sans-serif;
+            font-size: 14px;
+            outline: none;
+            flex-grow: 1;
+        }
+
+        .text-input::placeholder {
+            color: #299c26;
+            opacity: 0.8;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            white-space: nowrap;
+            display: none;
+            background-color: #0e1527;
+            padding: 0 5px;
+            border-radius: 3px;
+        }
+
+        .button-select {
+            width: 398px;
+            border-radius: 7px;
+            border: 1px solid #299c26;
+            box-sizing: border-box;
+            height: 42px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 15px;
+            cursor: pointer;
+            background-color: #299c26;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="whtsapp-no">
+        <div class="sign-up-wrapper">
+            <div class="sign-up-wrapper">
+                <img class="sign-up-wrapper" alt="" src="vector.jpg">
+                <div class="rectangle-parent">
+                    <div class="rectangle">
+                        <img class="rectangle-child" alt="" src="rectangle-4442.png">
+                        <img class="image-255-icon" alt="" src="image-255.png">
+                        <div class="text">WhatsApp</div>
+                    </div>
+                    <div class="text1">Sign In, from</div>
+                    <div class="text-box">
+                        <span class="country-code">+91</span>
+                        <input 
+                            type="text" 
+                            id="whatsappNumber" 
+                            maxlength="10" 
+                            placeholder="Enter your WhatsApp No." 
+                            class="text-input"
+                            oninput="validateNumber()" />
+                        <div id="error-message" class="error-message"></div>
+                    </div>
+                    <div class="component-64">
+                        <div class="button-select" id="buttonSelectContainer">
+                            <b class="sign-up1">Submit</b>
+                        </div>
+                    </div>
+                </div>
+                <img class="sign-up-child" alt="" src="group-2614338.jpg">
+                <div class="sign-up-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to validate the WhatsApp number input
+        function validateNumber() {
+            const inputField = document.getElementById("whatsappNumber");
+            const errorMessage = document.getElementById("error-message");
+            const value = inputField.value;
+
+            // Reset error message
+            errorMessage.style.display = "none";
+
+            // Check if the value contains non-numeric characters
+            if (/[^0-9]/.test(value)) {
+                errorMessage.style.display = "block";
+                errorMessage.textContent = "Only numbers allowed";
+                inputField.value = value.replace(/[^0-9]/g, ""); // Remove invalid characters
+                return;
+            }
+
+            // Check if the number is too short or too long
+            if (value.length > 10) {
+                errorMessage.style.display = "block";
+                errorMessage.textContent = "Max 10 digits";
+            } else if (value.length < 10 && value.length > 0) {
+                errorMessage.style.display = "block";
+                errorMessage.textContent = "10 digits required";
+            }
+        }
+
+        // Add event listener for the submit button
+        const buttonSelectContainer = document.getElementById("buttonSelectContainer");
+        if (buttonSelectContainer) {
+            buttonSelectContainer.addEventListener("click", function () {
+                const whatsappNumber = document.getElementById("whatsappNumber").value;
+                const errorMessage = document.getElementById("error-message");
+
+                if (whatsappNumber.length === 10) {
+                    errorMessage.style.display = "none";
+                    const action = 'whatsapp'; // Define the action here (e.g., 'signup' or 'login')
+                        window.location.href = `After_sign_in.html?action=${action}`; // Append the action to the URL
+                } else {
+                    errorMessage.style.display = "block";
+                    errorMessage.textContent = "Valid 10-digit number required";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

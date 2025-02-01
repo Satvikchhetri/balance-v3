@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="company_create_form_.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    
+
+    <title>Company Form</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" data-tab="company-info">Company Info</button>
+            <button class="tab" data-tab="bank-detail">Bank Detail</button>
+            <button class="tab" data-tab="other-detail">Other Detail</button>
+            <button class="tab" data-tab="taxation">Taxation</button>
+        </div>
+        <div id="company-info" class="tab-content active" style="height: 490px;">
+            <form>
+            <style>
+    .form-group {
+        position: relative;
+    }
+
+    #company-name {
+        padding-right: 120px; /* Adjust padding to make space for the error */
+    }
+
+    .form-error {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: red;
+        font-size: 8px; /* Adjust as needed */
+        pointer-events: none; /* Prevent interaction with error text */
+    }
+</style>
+
+<div class="form-group">
+    <label for="company-name">Company Name</label>
+    <div style="display: flex; align-items: center; width: 600px;">
+        <input type="text" id="company-name" placeholder="" required>
+        <div class="form-error" id="company-name-error"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('company-name').addEventListener('blur', function() {
+        const companyNameInput = this;
+        const errorDiv = document.getElementById('company-name-error');
+        if (!companyNameInput.value.trim()) {
+            errorDiv.textContent = 'Duplicate name/empty fields.';
+        } else {
+            errorDiv.textContent = ''; // Clear error message if input is valid
+        }
+    });
+</script>
+
+                
+                <div class="form-group">
+                    <label for="station-name">Station Name</label>
+                    <input type="text" id="station-name" placeholder="" style="width: 579px;">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="" style="width: 579px;">
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="contact1">Contact No. 1</label>
+                        <input type="text" id="contact1" placeholder="" style="width: 275px;">
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="contact2">Contact No. 2</label>
+                        <input type="text" id="contact2" placeholder="" style="width: 275px;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="" style="width: 275px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="pin">Pin Code</label>
+                        <input type="text" id="pin" placeholder=""style="width: 275px;">
+                    </div>
+                </div>
+
+              
+                
+
+
+              
+                <div class="row">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <div class="custom-dropdown">
+                            <!-- Dropdown button -->
+                            <button id="dropdownBtn" class="dropdown-button">
+                                <img src="https://flagcdn.com/w40/in.png" alt="India" class="dropdown-flag" />
+                                <span class="selected-text">India</span>
+                            </button>
+
+                            
+                            <!-- Dropdown list -->
+                           <div id="dropdownList" class="dropdown-list">
+                            <div id="searchWrapper" class="search-wrapper" style="display: none;">
+                                <input type="text" id="searchInput" class="search-input" placeholder="Search countries..." />
+                                <span class="search-icon">
+                                    
+                                </span>
+                            </div>
+
+
+
+
+
+
+                                <div class="dropdown-item" data-value="India" data-icon="https://flagcdn.com/w40/in.png">
+                                    <img src="https://flagcdn.com/w40/in.png" alt="India" /> India
+                                </div>
+                                <div class="dropdown-item" data-value="USA" data-icon="https://flagcdn.com/w40/us.png">
+                                    <img src="https://flagcdn.com/w40/us.png" alt="USA" /> USA
+                                </div>
+                                <div class="dropdown-item" data-value="UK" data-icon="https://flagcdn.com/w40/gb.png">
+                                    <img src="https://flagcdn.com/w40/gb.png" alt="UK" /> UK
+                                </div>
+                                <div class="dropdown-item" data-value="Australia" data-icon="https://flagcdn.com/w40/au.png">
+                                    <img src="https://flagcdn.com/w40/au.png" alt="Australia" /> Australia
+                                </div>
+                                <div class="dropdown-item" data-value="Canada" data-icon="https://flagcdn.com/w40/ca.png">
+                                    <img src="https://flagcdn.com/w40/ca.png" alt="Canada" /> Canada
+                                </div>
+                                <div class="dropdown-item" data-value="Germany" data-icon="https://flagcdn.com/w40/de.png">
+                                    <img src="https://flagcdn.com/w40/de.png" alt="Germany" /> Germany
+                                </div>
+                                <div class="dropdown-item" data-value="France" data-icon="https://flagcdn.com/w40/fr.png">
+                                    <img src="https://flagcdn.com/w40/fr.png" alt="France" /> France
+                                </div>
+                                <div class="dropdown-item" data-value="China" data-icon="https://flagcdn.com/w40/cn.png">
+                                    <img src="https://flagcdn.com/w40/cn.png" alt="China" /> China
+                                </div>
+                                <div class="dropdown-item" data-value="Japan" data-icon="https://flagcdn.com/w40/jp.png">
+                                    <img src="https://flagcdn.com/w40/jp.png" alt="Japan" /> Japan
+                                </div>
+                                <div class="dropdown-item" data-value="Brazil" data-icon="https://flagcdn.com/w40/br.png">
+                                    <img src="https://flagcdn.com/w40/br.png" alt="Brazil" /> Brazil
+                                </div>
+                                <div class="dropdown-item" data-value="South Africa" data-icon="https://flagcdn.com/w40/za.png">
+                                    <img src="https://flagcdn.com/w40/za.png" alt="South Africa" /> South Africa
+                                </div>
+                                <div class="dropdown-item" data-value="Russia" data-icon="https://flagcdn.com/w40/ru.png">
+                                    <img src="https://flagcdn.com/w40/ru.png" alt="Russia" /> Russia
+                                </div>
+                                <div class="dropdown-item" data-value="Italy" data-icon="https://flagcdn.com/w40/it.png">
+                                    <img src="https://flagcdn.com/w40/it.png" alt="Italy" /> Italy
+                                </div>
+                                <div class="dropdown-item" data-value="Spain" data-icon="https://flagcdn.com/w40/es.png">
+                                    <img src="https://flagcdn.com/w40/es.png" alt="Spain" /> Spain
+                                </div>
+                                <div class="dropdown-item" data-value="Mexico" data-icon="https://flagcdn.com/w40/mx.png">
+                                    <img src="https://flagcdn.com/w40/mx.png" alt="Mexico" /> Mexico
+                                </div>
+                                <div class="dropdown-item" data-value="Netherlands" data-icon="https://flagcdn.com/w40/nl.png">
+                                    <img src="https://flagcdn.com/w40/nl.png" alt="Netherlands" /> Netherlands
+                                </div>
+                                <div class="dropdown-item" data-value="Switzerland" data-icon="https://flagcdn.com/w40/ch.png">
+                                    <img src="https://flagcdn.com/w40/ch.png" alt="Switzerland" /> Switzerland
+                                </div>
+                                <div class="dropdown-item" data-value="South Korea" data-icon="https://flagcdn.com/w40/kr.png">
+                                    <img src="https://flagcdn.com/w40/kr.png" alt="South Korea" /> South Korea
+                                </div>
+                                <div class="dropdown-item" data-value="Saudi Arabia" data-icon="https://flagcdn.com/w40/sa.png">
+                                    <img src="https://flagcdn.com/w40/sa.png" alt="Saudi Arabia" /> Saudi Arabia
+                                </div>
+                                <div class="dropdown-item" data-value="United Arab Emirates" data-icon="https://flagcdn.com/w40/ae.png">
+                                    <img src="https://flagcdn.com/w40/ae.png" alt="United Arab Emirates" /> United Arab Emirates
+                                </div>
+                                <div class="dropdown-item" data-value="Singapore" data-icon="https://flagcdn.com/w40/sg.png">
+                                    <img src="https://flagcdn.com/w40/sg.png" alt="Singapore" /> Singapore
+                                </div>
+                                <div class="dropdown-item" data-value="Malaysia" data-icon="https://flagcdn.com/w40/my.png">
+                                    <img src="https://flagcdn.com/w40/my.png" alt="Malaysia" /> Malaysia
+                                </div>
+                                <div class="dropdown-item" data-value="South Korea" data-icon="https://flagcdn.com/w40/kr.png">
+                                    <img src="https://flagcdn.com/w40/kr.png" alt="South Korea" /> South Korea
+                                </div>
+                                <!-- Added countries after South Korea excluding those added earlier -->
+                                <div class="dropdown-item" data-value="Poland" data-icon="https://flagcdn.com/w40/pl.png">
+                                    <img src="https://flagcdn.com/w40/pl.png" alt="Poland" /> Poland
+                                </div>
+                                <div class="dropdown-item" data-value="Romania" data-icon="https://flagcdn.com/w40/ro.png">
+                                    <img src="https://flagcdn.com/w40/ro.png" alt="Romania" /> Romania
+                                </div>
+                                <div class="dropdown-item" data-value="Chile" data-icon="https://flagcdn.com/w40/cl.png">
+                                    <img src="https://flagcdn.com/w40/cl.png" alt="Chile" /> Chile
+                                </div>
+                                <div class="dropdown-item" data-value="Portugal" data-icon="https://flagcdn.com/w40/pt.png">
+                                    <img src="https://flagcdn.com/w40/pt.png" alt="Portugal" /> Portugal
+                                </div>
+                                <div class="dropdown-item" data-value="Belgium" data-icon="https://flagcdn.com/w40/be.png">
+                                    <img src="https://flagcdn.com/w40/be.png" alt="Belgium" /> Belgium
+                                </div>
+                                <div class="dropdown-item" data-value="Sweden" data-icon="https://flagcdn.com/w40/se.png">
+                                    <img src="https://flagcdn.com/w40/se.png" alt="Sweden" /> Sweden
+                                </div>
+                                <div class="dropdown-item" data-value="Finland" data-icon="https://flagcdn.com/w40/fi.png">
+                                    <img src="https://flagcdn.com/w40/fi.png" alt="Finland" /> Finland
+                                </div>
+                                <div class="dropdown-item" data-value="Denmark" data-icon="https://flagcdn.com/w40/dk.png">
+                                    <img src="https://flagcdn.com/w40/dk.png" alt="Denmark" /> Denmark
+                                </div>
+                                <div class="dropdown-item" data-value="Norway" data-icon="https://flagcdn.com/w40/no.png">
+                                    <img src="https://flagcdn.com/w40/no.png" alt="Norway" /> Norway
+                                </div>
+                                <div class="dropdown-item" data-value="Hungary" data-icon="https://flagcdn.com/w40/hu.png">
+                                    <img src="https://flagcdn.com/w40/hu.png" alt="Hungary" /> Hungary
+                                </div>
+                                <div class="dropdown-item" data-value="Austria" data-icon="https://flagcdn.com/w40/at.png">
+                                    <img src="https://flagcdn.com/w40/at.png" alt="Austria" /> Austria
+                                </div>
+                                <div class="dropdown-item" data-value="Czech Republic" data-icon="https://flagcdn.com/w40/cz.png">
+                                    <img src="https://flagcdn.com/w40/cz.png" alt="Czech Republic" /> Czech Republic
+                                </div>
+                                <div class="dropdown-item" data-value="Slovakia" data-icon="https://flagcdn.com/w40/sk.png">
+                                    <img src="https://flagcdn.com/w40/sk.png" alt="Slovakia" /> Slovakia
+                                </div>
+                                <div class="dropdown-item" data-value="Ukraine" data-icon="https://flagcdn.com/w40/ua.png">
+                                    <img src="https://flagcdn.com/w40/ua.png" alt="Ukraine" /> Ukraine
+                                </div>
+                                <div class="dropdown-item" data-value="Bulgaria" data-icon="https://flagcdn.com/w40/bg.png">
+                                    <img src="https://flagcdn.com/w40/bg.png" alt="Bulgaria" /> Bulgaria
+                                </div>
+                                <div class="dropdown-item" data-value="Croatia" data-icon="https://flagcdn.com/w40/hr.png">
+                                    <img src="https://flagcdn.com/w40/hr.png" alt="Croatia" /> Croatia
+                                </div>
+                                <div class="dropdown-item" data-value="Serbia" data-icon="https://flagcdn.com/w40/rs.png">
+                                    <img src="https://flagcdn.com/w40/rs.png" alt="Serbia" /> Serbia
+                                </div>
+                                <div class="dropdown-item" data-value="Slovenia" data-icon="https://flagcdn.com/w40/si.png">
+                                    <img src="https://flagcdn.com/w40/si.png" alt="Slovenia" /> Slovenia
+                                </div>
+
+                                <div class="dropdown-item" data-value="Argentina" data-icon="https://flagcdn.com/w40/ar.png">
+                                    <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" /> Argentina
+                                </div>
+                                <div class="dropdown-item" data-value="Egypt" data-icon="https://flagcdn.com/w40/eg.png">
+                                    <img src="https://flagcdn.com/w40/eg.png" alt="Egypt" /> Egypt
+                                </div>
+                                <div class="dropdown-item" data-value="Turkey" data-icon="https://flagcdn.com/w40/tr.png">
+                                    <img src="https://flagcdn.com/w40/tr.png" alt="Turkey" /> Turkey
+                                </div>
+                                <div class="dropdown-item" data-value="Israel" data-icon="https://flagcdn.com/w40/il.png">
+                                    <img src="https://flagcdn.com/w40/il.png" alt="Israel" /> Israel
+                                </div>
+                                <div class="dropdown-item" data-value="Greece" data-icon="https://flagcdn.com/w40/gr.png">
+                                    <img src="https://flagcdn.com/w40/gr.png" alt="Greece" /> Greece
+                                </div>
+                                <div class="dropdown-item" data-value="Pakistan" data-icon="https://flagcdn.com/w40/pk.png">
+                                    <img src="https://flagcdn.com/w40/pk.png" alt="Pakistan" /> Pakistan
+                                </div>
+                                <div class="dropdown-item" data-value="Bangladesh" data-icon="https://flagcdn.com/w40/bd.png">
+                                    <img src="https://flagcdn.com/w40/bd.png" alt="Bangladesh" /> Bangladesh
+                                </div>
+                                <div class="dropdown-item" data-value="Thailand" data-icon="https://flagcdn.com/w40/th.png">
+                                    <img src="https://flagcdn.com/w40/th.png" alt="Thailand" /> Thailand
+                                </div>
+                                <div class="dropdown-item" data-value="Vietnam" data-icon="https://flagcdn.com/w40/vn.png">
+                                    <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam" /> Vietnam
+                                </div>
+                                <div class="dropdown-item" data-value="Nigeria" data-icon="https://flagcdn.com/w40/ng.png">
+                                    <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" /> Nigeria
+                                </div>
+                                <div class="dropdown-item" data-value="Kenya" data-icon="https://flagcdn.com/w40/ke.png">
+                                    <img src="https://flagcdn.com/w40/ke.png" alt="Kenya" /> Kenya
+                                </div>
+                                <div class="dropdown-item" data-value="Chile" data-icon="https://flagcdn.com/w40/cl.png">
+                                    <img src="https://flagcdn.com/w40/cl.png" alt="Chile" /> Chile
+                                </div>
+                                <div class="dropdown-item" data-value="Peru" data-icon="https://flagcdn.com/w40/pe.png">
+                                    <img src="https://flagcdn.com/w40/pe.png" alt="Peru" /> Peru
+                                </div>
+                                <div class="dropdown-item" data-value="Afghanistan" data-icon="https://flagcdn.com/w40/af.png">
+                                    <img src="https://flagcdn.com/w40/af.png" alt="Afghanistan" /> Afghanistan
+                                </div>
+                                <div class="dropdown-item" data-value="Albania" data-icon="https://flagcdn.com/w40/al.png">
+                                    <img src="https://flagcdn.com/w40/al.png" alt="Albania" /> Albania
+                                </div>
+                                <div class="dropdown-item" data-value="Algeria" data-icon="https://flagcdn.com/w40/dz.png">
+                                    <img src="https://flagcdn.com/w40/dz.png" alt="Algeria" /> Algeria
+                                </div>
+                                <div class="dropdown-item" data-value="Andorra" data-icon="https://flagcdn.com/w40/ad.png">
+                                    <img src="https://flagcdn.com/w40/ad.png" alt="Andorra" /> Andorra
+                                </div>
+                                <div class="dropdown-item" data-value="Angola" data-icon="https://flagcdn.com/w40/ao.png">
+                                    <img src="https://flagcdn.com/w40/ao.png" alt="Angola" /> Angola
+                                </div>
+                                <div class="dropdown-item" data-value="Antigua and Barbuda" data-icon="https://flagcdn.com/w40/ag.png">
+                                    <img src="https://flagcdn.com/w40/ag.png" alt="Antigua and Barbuda" /> Antigua and Barbuda
+                                </div>
+                                <div class="dropdown-item" data-value="Argentina" data-icon="https://flagcdn.com/w40/ar.png">
+                                    <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" /> Argentina
+                                </div>
+                                <div class="dropdown-item" data-value="Armenia" data-icon="https://flagcdn.com/w40/am.png">
+                                    <img src="https://flagcdn.com/w40/am.png" alt="Armenia" /> Armenia
+                                </div>
+                                <div class="dropdown-item" data-value="Azerbaijan" data-icon="https://flagcdn.com/w40/az.png">
+                                    <img src="https://flagcdn.com/w40/az.png" alt="Azerbaijan" /> Azerbaijan
+                                </div>
+                                <div class="dropdown-item" data-value="Bahamas" data-icon="https://flagcdn.com/w40/bs.png">
+                                    <img src="https://flagcdn.com/w40/bs.png" alt="Bahamas" /> Bahamas
+                                </div>
+                                <div class="dropdown-item" data-value="Bahrain" data-icon="https://flagcdn.com/w40/bh.png">
+                                    <img src="https://flagcdn.com/w40/bh.png" alt="Bahrain" /> Bahrain
+                                </div>
+                                <div class="dropdown-item" data-value="Bangladesh" data-icon="https://flagcdn.com/w40/bd.png">
+                                    <img src="https://flagcdn.com/w40/bd.png" alt="Bangladesh" /> Bangladesh
+                                </div>
+                                <div class="dropdown-item" data-value="Barbados" data-icon="https://flagcdn.com/w40/bb.png">
+                                    <img src="https://flagcdn.com/w40/bb.png" alt="Barbados" /> Barbados
+                                </div>
+                                <div class="dropdown-item" data-value="Belize" data-icon="https://flagcdn.com/w40/bz.png">
+                                    <img src="https://flagcdn.com/w40/bz.png" alt="Belize" /> Belize
+                                </div>
+                                <div class="dropdown-item" data-value="Benin" data-icon="https://flagcdn.com/w40/bj.png">
+                                    <img src="https://flagcdn.com/w40/bj.png" alt="Benin" /> Benin
+                                </div>
+                                <div class="dropdown-item" data-value="Bhutan" data-icon="https://flagcdn.com/w40/bt.png">
+                                    <img src="https://flagcdn.com/w40/bt.png" alt="Bhutan" /> Bhutan
+                                </div>
+                                <div class="dropdown-item" data-value="Bolivia" data-icon="https://flagcdn.com/w40/bo.png">
+                                    <img src="https://flagcdn.com/w40/bo.png" alt="Bolivia" /> Bolivia
+                                </div>
+                                
+
+
+
+
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <style>
+                    .dropdown-list.active {
+                        display: block;
+                    }
+
+                    /* Arrow style */
+                    .dropdown-button::after {
+                        content: '▼'; /* Down arrow by default */
+                        color: #3E507B;
+                        margin-left: 10px;
+                    }
+
+                    /* Change arrow when dropdown is open */
+
+
+                    .dropdown-list.active ~ .dropdown-button::after {
+                        content: '▲'; /* Up arrow when dropdown is active */
+                         }      
+                         
+                         
+                     .search-wrapper {
+                            padding: 5px;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        .search-input {
+                            width: 100%;
+                            padding: 8px;
+                            margin-right: 10px;
+                            border-radius: 4px;
+                            border: 1px solid #ccc;
+                        }
+
+                        .search-icon {
+                            position: absolute;
+                            top: 8px;
+                            right: 10px;
+                            cursor: pointer;
+                        }
+
+                        .search-input:focus {
+                            outline: none;
+                        }
+
+
+
+                        .form-group {
+                            font-family: Arial, sans-serif;
+                        }
+                    
+                        /* Dropdown button */
+                        .dropdown-button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            width: 295px; /* Adjust width */
+                            padding: 8px;
+                            font-size: 14px; /* Text size */
+                            background-color: #0F172A; /* Dropdown background */
+                            color: #f0f0f0; /* Text color */
+                           box-shadow: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                        }
+                    
+                        .dropdown-flag {
+                            box-shadow: none;
+                            width: 20px;
+                            height: 15px;
+                            margin-right: 10px;
+                        }
+                    
+                        .selected-text {
+                            flex-grow: 1;
+                            text-align: left;
+                        }
+                    
+                        /* Dropdown list */
+                        .dropdown-list {
+                            display: none; /* Hidden by default */
+                            position: absolute;
+                            background-color: #0F172A; /* Match dropdown background */
+                            box-shadow: none;
+                            border-radius: 4px;
+                            width: 295px; /* Match button width */
+                            z-index: 1000;
+                            max-height: 150px;
+                            overflow-x: hidden;
+                            overflow-y: auto;
+                        }
+                    
+                        .dropdown-item {
+                            display: flex;
+                            align-items: center;
+                            padding: 8px;
+                            font-size: 14px;
+                            color: #3E507B; /* Dropdown item text color */
+                            cursor: pointer;
+                            box-shadow: none;
+                        }
+                    
+                        .dropdown-item img {
+                            width: 20px;
+                            height: 15px;
+                            margin-right: 10px;
+                            box-shadow: none;
+                        }
+                    
+                        .dropdown-item:hover {
+                            background-color: #333a4a;
+                            box-shadow: none;
+                            color: #ffffff; /* Hover text color */
+                        }
+                    
+                        /* Show dropdown */
+                        .dropdown-list.show {
+                            box-shadow: none;
+                            display: block;
+                        }
+                    </style>
+                    
+                    <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownBtn = document.querySelector("#dropdownBtn");
+    const dropdownList = document.querySelector("#dropdownList");
+    const searchWrapper = document.querySelector("#searchWrapper");
+    const searchInput = document.querySelector("#searchInput");
+    const dropdownItems = document.querySelectorAll(".dropdown-item");
+
+    // Show dropdown and search bar when the dropdown button is clicked
+    dropdownBtn.addEventListener("click", function(event) {
+        event.stopPropagation(); // Prevent event from propagating to the document click listener
+        dropdownList.classList.toggle("active");
+        
+        // Always show the search bar when the dropdown is opened
+        searchWrapper.style.display = "block"; 
+        if (dropdownList.classList.contains("active")) {
+            searchInput.focus(); // Automatically focus the search bar when dropdown is opened
+        }
+    });
+
+    // Close the dropdown if clicked outside
+    document.addEventListener("click", function(event) {
+        if (!event.target.closest(".custom-dropdown")) {
+            dropdownList.classList.remove("active");
+            searchWrapper.style.display = "none"; // Hide search bar when dropdown is closed
+        }
+    });
+
+    // Filter dropdown items based on search input
+    searchInput.addEventListener("input", function() {
+        const filter = searchInput.value.toLowerCase();
+        dropdownItems.forEach(item => {
+            const countryName = item.textContent || item.innerText;
+            item.style.display = countryName.toLowerCase().includes(filter) ? "block" : "none";
+        });
+    });
+
+    // Update the button text and flag when a country is selected
+    dropdownItems.forEach(item => {
+        item.addEventListener("click", function() {
+            const selectedValue = item.getAttribute("data-value");
+            const iconUrl = item.getAttribute("data-icon");
+            dropdownBtn.innerHTML = `<img src="${iconUrl}" alt="${selectedValue}" class="dropdown-flag" /> <span class="selected-text">${selectedValue}</span>`;
+            dropdownList.classList.remove("active");
+            searchWrapper.style.display = "none"; // Hide search bar after selection
+        });
+    });
+
+    // Close the dropdown when clicking outside (document event handler already in place)
+});
+
+
+
+
+
+                        document.addEventListener("DOMContentLoaded", function () {
+                            const dropdownBtn = document.querySelector("#dropdownBtn");
+                            const dropdownList = document.querySelector("#dropdownList");
+                            const dropdownItems = document.querySelectorAll(".dropdown-item");
+                    
+                            // Toggle dropdown visibility
+                            dropdownBtn.addEventListener("click", function () {
+                                dropdownList.classList.toggle("show");
+                            });
+                    
+                            // Update the button text and flag on selection
+                            dropdownItems.forEach(item => {
+                                item.addEventListener("click", function () {
+                                    const selectedValue = item.getAttribute("data-value");
+                                    const iconUrl = item.getAttribute("data-icon");
+                                    dropdownBtn.innerHTML = `<img src="${iconUrl}" alt="${selectedValue}" class="dropdown-flag" /> <span class="selected-text">${selectedValue}</span>`;
+                                    dropdownList.classList.remove("show");
+                                });
+                            });
+                    
+                            // Close dropdown when clicking outside
+                            document.addEventListener("click", function (e) {
+                                if (!dropdownBtn.contains(e.target) && !dropdownList.contains(e.target)) {
+                                    dropdownList.classList.remove("show");
+                                }
+                            });
+                        });
+                    </script>
+                    
+
+                    
+                    
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select id="state">
+                            <option value="">Select State</option>
+                            <!-- States will be dynamically added based on country selection -->
+                        </select>
+                    </div>
+
+                    <script>
+
+const dropdownBtn = document.getElementById('dropdownBtn');
+const dropdownList = document.getElementById('dropdownList');
+const stateSelect = document.getElementById('state');
+
+// Define the states for each country (simplified example)
+const countryStates = {
+    India: ['Delhi', 'Karnataka', 'Maharashtra', 'Tamil Nadu'],
+    USA: ['California', 'Texas', 'Florida', 'New York'],
+    UK: ['England', 'Scotland', 'Wales', 'Northern Ireland'],
+    Australia: ['New South Wales', 'Victoria', 'Queensland', 'Western Australia']
+    // Add more countries and states as needed
+};
+
+// Handle country selection
+dropdownList.addEventListener('click', function(event) {
+    if (event.target.classList.contains('dropdown-item')) {
+        const selectedCountry = event.target.getAttribute('data-value');
+        dropdownBtn.innerHTML = `<img src="${event.target.getAttribute('data-icon')}" alt="${selectedCountry}" class="dropdown-flag" /> <span class="selected-text">${selectedCountry}</span>`;
+        dropdownList.classList.remove('active');
+
+        // Update the states dropdown based on the selected country
+        updateStatesDropdown(selectedCountry);
+    }
+});
+
+// Open/close dropdown
+dropdownBtn.addEventListener('click', function() {
+    dropdownList.classList.toggle('active');
+});
+
+// Close dropdown if clicked outside
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.custom-dropdown')) {
+        dropdownList.classList.remove('active');
+    }
+});
+
+// Update states dropdown based on selected country
+function updateStatesDropdown(country) {
+    // Clear the existing options
+    stateSelect.innerHTML = '';
+
+    // Add default "Select State" option
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = 'Select State';
+    stateSelect.appendChild(defaultOption);
+
+    // Get the states for the selected country
+    const states = countryStates[country] || [];
+
+    // Populate the states dropdown
+    states.forEach(state => {
+        const option = document.createElement('option');
+        option.value = state;
+        option.textContent = state;
+        stateSelect.appendChild(option);
+    });
+}
+
+                    </script>
+
+
+                </div>
+                <div class="row">
+<!-- Currency select dropdown -->
+<div class="form-group" style="position: relative;">
+    <label for="currency">Currency</label>
+    <select id="currency">
+        <option value="EUR">€ - EUR</option>
+        <option value="INR" selected>₹ - INR</option>
+        <option value="KRW">₩ - KRW</option>
+        <option value="ILS">₪ - ILS</option>
+        <option value="ANG">ƒ - ANG</option>
+        <option value="JPY">¥ - JPY</option>
+        <option value="NGN">₦ - NGN</option>
+        <option value="USD">$ - USD</option>
+        <option value="" disabled>──────────</option>
+        <option value="add-edit" class="add-edit-option">Add/Edit Currency Name</option>
+    </select>
+</div>
+
+<!-- Popup section -->
+<div class="unit-group" id="currency-popup" style="display: none;">
+    <!-- Currency List Header -->
+    <div class="unit-group-child"></div>
+    <div class="company-3">
+        <div class="company-3-inner">
+            <div class="group-wrapper">
+                <div class="group-wrapper">
+                    <div class="group-wrapper">
+                        <div class="group-wrapper">
+                            <div class="group-wrapper">
+                                <div class="group-wrapper">
+                                    <div class="text">Currency List</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Popup content with image -->
+    <div class="unit-group-inner">
+        <div class="image-171-wrapper">
+            <img class="image-171-icon" alt="" src="image 171.png">
+        </div>
+    </div>
+
+    <!--plus icon -->
+    
+    <!-- Plus Icon -->
+<div class="plus-icon-wrapper" onclick="openPopup()">
+    <img src="plus.png" alt="Plus Icon" class="plus-icon">
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+<!-- Popup -->
+<div class="plus-icon-modify-unit" id="popup">
+    <div class="plus-icon-modify-unit-child"></div>
+    <div class="plus-icon-company-3-wrapper">
+        <div class="plus-icon-company-3">
+            <div class="plus-icon-company-3-inner">
+                <div class="plus-icon-group-wrapper">
+                    <div class="plus-icon-text">Edit Currency Name</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="plus-icon-input-parent">
+        <div class="plus-icon-input">
+            <div class="plus-icon-content">
+                <div class="plus-icon-text1">₹</div>
+            </div>
+        </div>
+        <div class="plus-icon-input-wrapper">
+            <div class="plus-icon-input1">
+                <div class="plus-icon-content">
+                    <div class="plus-icon-text1">INR</div>
+                </div>
+            </div>
+        </div>
+        <div class="plus-icon-input-container">
+            <div class="plus-icon-input1">
+                <div class="plus-icon-content">
+                    <div class="plus-icon-text1">Indian Rupees</div>
+                </div>
+            </div>
+        </div>
+        <div class="plus-icon-text4">Currency Name</div>
+        <div class="plus-icon-text5">Currency Code</div>
+        <div class="plus-icon-text6">Currency Symbol</div>
+    </div>
+    <div class="plus-icon-button-select-parent">
+        <div class="plus-icon-button-select" onclick="updateCurrency()">Update</div>
+        <div class="plus-icon-button-select" onclick="closePopup()">Close</div>
+    </div>
+</div>
+
+    
+     
+
+    <style>
+
+.unit-group-item-wrapper {
+    position: relative;
+}
+
+.hover-text {
+    position: absolute;
+    top: 335px;
+    left: 148px;
+    transform: translate(-50%, -50%);
+    color: transparent;  /* Initially hide the text */
+    font-size: 10px;
+   
+    font-weight: light;  /* Light font style */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.unit-group-item-wrapper:hover .hover-text {
+    color: white;  /* Show white text on hover */
+}
+
+    </style>
+    
+    <!-- Close Button -->
+    <div class="button-select close-btn">
+        <b class="text1">
+            <span class="c">C</span>lose
+        </b>
+    </div>
+
+ 
+
+    <!-- Currency Table Structure -->
+    <div class="table-header-cell-wrapper">
+        <div class="table-header-cell">
+            <div class="table-header-cell-inner">
+                <div class="tablke-header-left-parent">
+                    <div class="tablke-header-left">
+                        <div class="table-header">
+                            <div class="text2">Symbol</div>
+                        </div>
+                    </div>
+                    <div class="tablke-header-left1">
+                        <div class="table-header">
+                            <div class="text2">Described Currency Name</div>
+                        </div>
+                    </div>
+                    <div class="tablke-header-left2">
+                        <div class="table-header">
+                            <div class="text2">Code</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+ 
+
+    
+     <div class="unit-group-inner1">
+        <div class="row-wrapper">
+            <div class="wrapper">
+                <div class="div">€</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">European Pond</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">EUR</div>
+            </div>
+        </div>
+    
+        <div class="row-wrapper">
+            <div class="wrapper">
+                <div class="div">₹</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">Indian Rupees</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">INR</div>
+            </div>
+        </div>
+    
+        <div class="row-wrapper">
+            <div class="wrapper">
+                <div class="div">₩</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">North Korean Won</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">KPW</div>
+            </div>
+        </div>
+    
+        <div class="row-wrapper">
+            <div class="wrapper">
+                <div class="div">₪</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">Israel New Shekels</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">INS</div>
+            </div>
+        </div>
+    
+        <div class="row-wrapper">
+            <div class="wrapper">
+                <div class="div">₱</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">Philippine Peso</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">PHP</div>
+            </div>
+        </div>
+    
+        <div class="row-wrapper">
+            <div class="wrapper">
+                <div class="div">£</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">British Pound Sterling</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">GBP</div>
+            </div>
+        </div>
+    
+        <div class="row-wrapper">
+            <div class="wrapper">
+                <div class="div">$</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">United States Dollar</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">USD</div>
+            </div>
+        </div>
+    
+        <div class="row-wrapper">
+            <div class="wrapper">
+                <div class="div">¥</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">Chinese Yuan</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">CNY</div>
+            </div>
+        </div>
+    
+        <div class="row-wrapper">
+            <div class="wrapper">
+                <div class="div">₦</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">Nigerian Naira</div>
+            </div>
+            <div class="wrapper">
+                <div class="div">NGN</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Existing script for currency items
+          const currencyItems = document.querySelectorAll('.unit-group-inner1 .row-wrapper');
+          const currencySelect = document.getElementById('currency');
+      
+          currencyItems.forEach(row => {
+              row.addEventListener('click', function () {
+                  // Get the symbol and currency code from the clicked row
+                  const symbol = row.querySelector('.wrapper .div').textContent;
+                  const currencyCode = row.querySelectorAll('.wrapper .div')[2].textContent;
+      
+                  // Check if the option is already in the dropdown
+                  let option = Array.from(currencySelect.options).find(option => option.value === currencyCode);
+      
+                  if (!option) {
+                      // If the option does not exist, add it dynamically
+                      const newOption = document.createElement('option');
+                      newOption.value = currencyCode;
+                      newOption.textContent = `${symbol} - ${currencyCode}`;
+      
+                      // Add the new option at the appropriate place
+                      currencySelect.insertBefore(newOption, currencySelect.querySelector('option[value="add-edit"]'));
+                      option = newOption; // Set the option to the newly created one
+                  }
+      
+                  // Set the newly added option as selected
+                  option.selected = true;
+              });
+          });
+      
+          // New script for plus icon popup
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Existing script for currency items
+    const currencyItems = document.querySelectorAll('.unit-group-inner1 .row-wrapper');
+    const currencySelect = document.getElementById('currency');
+
+    currencyItems.forEach(row => {
+        row.addEventListener('click', function () {
+            // Get the symbol and currency code from the clicked row
+            const symbol = row.querySelector('.wrapper .div').textContent;
+            const currencyCode = row.querySelectorAll('.wrapper .div')[2].textContent;
+
+            // Check if the option is already in the dropdown
+            let option = Array.from(currencySelect.options).find(option => option.value === currencyCode);
+
+            if (!option) {
+                // If the option does not exist, add it dynamically
+                const newOption = document.createElement('option');
+                newOption.value = currencyCode;
+                newOption.textContent = `${symbol} - ${currencyCode}`;
+
+                // Add the new option at the appropriate place
+                currencySelect.insertBefore(newOption, currencySelect.querySelector('option[value="add-edit"]'));
+                option = newOption; // Set the option to the newly created one
+            }
+
+            // Set the newly added option as selected
+            option.selected = true;
+        });
+    });
+
+    // New script for plus icon popup
+    // Function to close all popups
+    function closeAllPopups() {
+      // Close the previous popup
+      document.getElementById('currency-popup').style.display = 'none';
+      // Close the plus icon popup
+      document.getElementById('popup').style.display = 'none';
+      // Close the overlay
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+    // Open the plus icon popup and close the previous popup
+    document.querySelector('.plus-icon-wrapper').addEventListener('click', function (event) {
+      event.stopPropagation(); // Prevent event propagation
+
+      // Close all other popups
+      closeAllPopups();
+
+      // Open the plus icon popup
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    });
+
+    // Close the plus icon popup when clicking on the overlay
+    document.getElementById('overlay').addEventListener('click', function () {
+      closeAllPopups();
+    });
+
+    // Close the plus icon popup when clicking the close button
+    document.querySelector('.close-popup').addEventListener('click', function (event) {
+      event.stopPropagation(); // Prevent event propagation
+      closeAllPopups();
+    });
+  });
+
+      </script>
+    <style>
+        /* Styling for each row */
+/* Styling for each row */
+.row-wrapper {
+    display: flex; /* Make the row horizontal */
+    justify-content: space-between; /* Space out columns */
+    align-items: center; /* Vertically center items */
+    padding: 10px; /* Add space around the row */
+    border-bottom: 1px solid #24324a; /* Add separator between rows */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+/* Hover effect for each row */
+.row-wrapper:hover {
+    background-color: #1b2335; /* Highlight background on hover */
+    color: #a9c2ff; /* Change text color on hover */
+    cursor: pointer; /* Pointer cursor for better UX */
+}
+
+/* Flex and alignment for the columns */
+.wrapper {
+    flex: 1; /* Equal width for all columns */
+    text-align: left; /* Align text to the left */
+}
+
+/* Force currency names to stay on a single line */
+.div {
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Optional: Add scrolling for long lists */
+.unit-group-inner1 {
+    max-height: 400px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #24324a; /* Add border around the container */
+}
+
+    </style>
+
+    <div class="draw-1-wrapper">
+        <img class="draw-1-icon" alt="" src="draw 1.png">
+    </div>
+ </div>
+
+
+
+
+
+<!-- JavaScript to handle popup visibility -->
+<script>
+    // JavaScript to handle dropdown selection and show the popup
+document.getElementById('currency').addEventListener('change', function() {
+    if (this.value === 'add-edit') { // Check if 'Add/Edit Currency Name' is selected
+        document.getElementById('currency-popup').style.display = 'block'; // Show the popup
+        this.value = ''; // Clear the dropdown value so it can be triggered again
+    }
+});
+
+// Close the popup when the close button is clicked
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('currency-popup').style.display = 'none'; // Hide the popup
+});
+
+    // Wait for the DOM to be fully loaded before adding event listeners
+    document.addEventListener('DOMContentLoaded', function () {
+        const addEditOption = document.querySelector('.add-edit-option');
+        const closeBtn = document.querySelector('.close-btn');
+        const currencyPopup = document.getElementById('currency-popup');
+        
+        // Ensure both the select option and the close button are found
+        if (addEditOption && closeBtn && currencyPopup) {
+            // Show popup on selecting Add/Edit
+            addEditOption.addEventListener('click', function() {
+                currencyPopup.style.display = 'block';
+            });
+        
+            // Close popup on clicking Close
+            closeBtn.addEventListener('click', function() {
+                currencyPopup.style.display = 'none';
+            });
+        } else {
+            console.log('One or more elements are missing.');
+        }
+    });
+</script>
+
+<!-- CSS for styling the 'Add/Edit' option -->
+<style>
+    .add-edit-option {
+        color: #FFB620; /* Change to your preferred color */
+        font-weight: lighter; /* Optional for emphasis */
+        font-style: italic;
+    }
+
+    /* Additional styling for the popup (optional) */
+    #currency-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #0F172A;
+        padding: 20px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 9999; /* Ensure the popup is above other elements */
+        display: none; /* Initially hidden */
+    }
+
+    .close-btn {
+        cursor: pointer;
+        color: #FF0000; /* Close button color */
+    }
+</style>
+
+                    
+                    
+                    
+                    
+                    <div class="form-group">
+                        <label for="fiscal-year">F/Y Start Month</label>
+                        <select id="fiscal-year">
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="buttons" style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
+                    <div class="create-btn" style="margin-right: 10px;margin-top: 20px;">
+                        <a href="after_company_create.html">
+                            <button type="button" class="create">Create</button>
+                        </a>
+                    </div>
+                    <div class="close-btn" style="margin-left: 1300px; align-self: flex-end;">
+                        <button type="button" class="close">Close</button>
+                    </div>
+                </div>
+                
+                
+            </form>
+        </div>
+
+        <div id="bank-detail" class="tab-content" style="height: 150px;">
+            <div class="row">
+            <form>
+                <div class="form-group-bank">
+                    <label for="account-number">Account Number</label>
+                    <input type="text" id="account-number" placeholder="" style="width: 275px;">
+                </div>
+                <div class="form-group-bank" style="position: relative; bottom: 60px; left:315px;">
+                    <label for="bank-name">Bank Name</label>
+                    <input type="text" id="bank-name" placeholder="" style="width: 275px;">
+                </div>
+                
+            </div>
+                <div class="form-group-bank"  style="position: relative; bottom: 50px;">
+                    <label for="ifsc-code">IFSC Code</label>
+                    <input type="text" id="ifsc-code" placeholder=""style="width: 275px;">
+                </div>
+                
+                <div class="buttons"style="text-align: center; margin-top: 325px;">
+                    <button type="button" class="create">Create</button>
+                </div>
+            </form>
+        </div>
+        <script>
+       const accountNumberInput = document.getElementById('account-number');
+const bankNameInput = document.getElementById('bank-name');
+const accountNumberError = document.getElementById('account-number-error');
+const bankNameError = document.getElementById('bank-name-error');
+
+// Restrict account number to only digits and limit length
+accountNumberInput.addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, ''); // Removes non-digit characters
+    if (this.value.length > 14) {
+        this.value = this.value.slice(0, 14); // Limit max length to 14 digits
+    }
+});
+
+// Restrict bank name to only letters and spaces
+bankNameInput.addEventListener('input', function() {
+    this.value = this.value.replace(/[^A-Za-z\s]/g, ''); // Removes non-letter characters
+});
+
+// Validate fields on save button click
+document.getElementById('save-button').addEventListener('click', function() {
+    accountNumberError.textContent = '';
+    bankNameError.textContent = '';
+
+    const accountNumberPattern = /^(?:\d{11}|\d{12,14})$/;
+    if (!accountNumberPattern.test(accountNumberInput.value.trim())) {
+        accountNumberError.textContent = 'Account number must be 11, or between 12 and 14 digits.';
+    }
+
+    if (bankNameInput.value.trim() === '' || !/^[A-Za-z\s]+$/.test(bankNameInput.value.trim())) {
+        bankNameError.textContent = 'Bank name must contain only letters.';
+    }
+});
+
+
+
+        </script>
+
+<div id="other-detail" class="tab-content" style="height: 300px;">
+    <form>
+        <!-- Other form fields -->
+        <div class="form-group">
+            <label for="industry">Food License No.</label>
+            <input type="text" id="industry" placeholder="" style="width: 275px;">
+        </div>
+        <div class="form-group" style="position: relative; bottom: 75px; left:315px;">
+            <label for="website">Drug License No.</label>
+            <input type="url" id="website" placeholder=""style="width: 275px;">
+        </div>
+        <div class="form-group" style="position: relative; bottom:77px;">
+            <label for="tan">Tan No.</label>
+            <input type="url" id="tan" placeholder=""style="width: 275px;">
+        </div>
+        <div class="form-group" style="position: relative; bottom: 150px; left:315px;">
+            <label for="cin">Cin No.</label>
+            <input type="text" id="cin" placeholder=" "style="width: 275px;">
+        </div>
+
+        <!-- Logo Upload Section -->
+        <div class="form-group logo-section"style="position: relative; bottom: 110px;">
+            <div class="logo-preview" id="logoPreview">
+                <!-- Default initials -->
+                <span id="logoInitials">SC</span>
+            </div>
+            <div class="logo-instructions">
+                <label for="logoUpload">Drag Logo Image here</label>
+                <span>or</span>
+                <label for="logoUpload" class="browse-link">Browse image</label>
+                <input type="file" id="logoUpload" accept="image/*" style="display: none;" />
+            </div>
+        </div>
+
+        <div class="buttons" style="text-align: center; margin-top: 120px;">
+            <button type="button" class="create">
+                Create
+            </button>
+        </div>
+      
+    </form>
+</div>
+<script>
+
+const logoUpload = document.getElementById('logoUpload');
+const logoPreview = document.getElementById('logoPreview');
+const logoInitials = document.getElementById('logoInitials');
+
+// Handle file input change
+logoUpload.addEventListener('change', handleFile);
+
+// Handle drag-and-drop
+logoPreview.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    logoPreview.classList.add('dragging');
+});
+
+logoPreview.addEventListener('dragleave', () => {
+    logoPreview.classList.remove('dragging');
+});
+
+logoPreview.addEventListener('drop', (e) => {
+    e.preventDefault();
+    logoPreview.classList.remove('dragging');
+    const file = e.dataTransfer.files[0];
+    if (file) {
+        processFile(file);
+    }
+});
+
+// Handle file input or drop
+function handleFile(event) {
+    const file = event.target.files[0];
+    if (file) {
+        processFile(file);
+    }
+}
+
+function processFile(file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        // Display uploaded image
+        logoInitials.style.display = 'none';
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        logoPreview.innerHTML = ''; // Clear existing content
+        logoPreview.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+}
+</script>
+
+<div id="taxation" class="tab-content" style="height: 150px;">
+    <form>
+        <div class="form-group taxation-header">
+            <label for="toggleTax"></label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="toggleTax" />
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="tax-id">GST Number</label>
+            <input type="text" id="tax-id" placeholder="" style="width: 275px;">
+        </div>
+        <div class="form-group"style="position: relative; bottom: 72px; left:315px;">
+            <label for="pan">PAN Number</label>
+            <input type="text" id="pan" placeholder="" style="width: 275px;">
+        </div>
+        <div class="form-group"style="position: relative; bottom: 70px;">
+            <label for="tan">GST Category</label>
+            <input type="text" id="tan" placeholder="" style="width: 275px;">
+        </div>
+        <div class="buttons" style="position: relative; top: 300px;">
+            <button type="button" class="create">Create</button>
+        </div>
+    </form>
+</div> <!-- Ensure this closing div is correct -->
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Corrected selector for multiple class groups
+            const inputs = document.querySelectorAll('.form-group input, .form-group-bank input');
+            
+            inputs.forEach((input, index) => {
+                input.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault(); // Prevent form submission
+                        const nextInput = inputs[index + 1];
+                        if (nextInput) {
+                            nextInput.focus(); // Move to the next input
+                        } else {
+                            inputs[0].focus(); // Optional: Loop back to the first input
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <script>
+        // Toggle Taxation Fields Enable/Disable
+        let toggleTax = document.getElementById('toggleTax');
+        toggleTax.addEventListener('change', function () {
+            const isEnabled = this.checked; // true if checkbox is checked
+            const fields = document.querySelectorAll('.form-group input:not(#toggleTax)');
+        
+            fields.forEach(field => {
+    if (isEnabled) {
+        field.classList.add('field-enabled');
+        field.classList.remove('field-disabled');
+    } else {
+        field.classList.add('field-disabled');
+        field.classList.remove('field-enabled');
+    }
+    field.disabled = !isEnabled; // Disable or enable fields
+});
+
+        });
+        
+        // GST Number Validation and Auto-fill for PAN
+        document.getElementById('tax-id').addEventListener('input', function () {
+            let gstin = this.value;
+            if (gstin.length > 15) {
+                this.value = gstin.substring(0, 15); // Limit input to 15 characters
+            }
+            if (gstin.length === 15) {
+                const panNumber = gstin.substring(2, 12); // Extract PAN from GSTIN
+                document.getElementById('pan').value = panNumber; // Auto-fill PAN Number
+            } else {
+                document.getElementById('pan').value = ''; // Clear PAN if GSTIN is not 15 characters
+            }
+        });
+        
+        // Tab Switching Logic (if applicable)
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active')); // Remove active class from all tabs
+                tab.classList.add('active'); // Add active class to the clicked tab
+        
+                tabContents.forEach(tc => tc.classList.remove('active')); // Hide all tab contents
+                document.getElementById(tab.dataset.tab).classList.add('active'); // Show the active tab content
+            });
+        });
+        </script>
+        
+</body>
+</html>

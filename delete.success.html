@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #0F172A; /* Changed background color */
+      color: #76a9fc;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .message {
+      font-size: 24px; /* Increased font size */
+      font-weight: bold; /* Made text bold */
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #e0e0e0;
+      color: #000;
+      font-size: 14px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2A6FEF; /* Change background color on hover */
+      transform: scale(1.1); /* Added hover effect */
+      color: #ffffff; /* Change text color on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="message">Account deleted successfully.</div>
+    <button class="btn" onclick="closeWindow()">Close</button>
+  </div>
+
+  <script>
+    function closeWindow() {
+      alert("Close button clicked"); // Simulate behavior, since web apps can't close windows directly without user prompts.
+    }
+  </script>
+</body>
+</html>

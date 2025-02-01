@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="company_create_form_.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" data-tab="company-info">Company Info</button>
+            <button class="tab" data-tab="bank-detail">Bank Detail</button>
+            <button class="tab" data-tab="other-detail">Other Detail</button>
+            <button class="tab" data-tab="taxation">Taxation</button>
+        </div>
+        <div id="company-info" class="tab-content active">
+            <form>
+            <style>
+    .form-group {
+        position: relative;
+    }
+
+    #company-name {
+        padding-right: 120px; /* Adjust padding to make space for the error */
+    }
+
+    .form-error {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: red;
+        font-size: 8px; /* Adjust as needed */
+        pointer-events: none; /* Prevent interaction with error text */
+    }
+</style>
+
+<div class="form-group">
+    <label for="company-name">Company Name</label>
+    <div style="display: flex; align-items: center; width: 600px;">
+        <input type="text" id="company-name" placeholder="" required>
+        <div class="form-error" id="company-name-error"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('company-name').addEventListener('blur', function() {
+        const companyNameInput = this;
+        const errorDiv = document.getElementById('company-name-error');
+        if (!companyNameInput.value.trim()) {
+            errorDiv.textContent = 'Duplicate name/empty fields.';
+        } else {
+            errorDiv.textContent = ''; // Clear error message if input is valid
+        }
+    });
+</script>
+
+                
+                <div class="form-group">
+                    <label for="station-name">Station Name</label>
+                    <input type="text" id="station-name" placeholder="" style="width: 579px;">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="" style="width: 579px;">
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="contact1">Contact No. 1</label>
+                        <input type="text" id="contact1" placeholder="" style="width: 275px;">
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="contact2">Contact No. 2</label>
+                        <input type="text" id="contact2" placeholder="" style="width: 275px;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="" style="width: 275px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="pin">Pin Code</label>
+                        <input type="text" id="pin" placeholder=""style="width: 275px;">
+                    </div>
+                </div>
+
+
+              
+                <div class="row">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country">
+                            <option value="">Select Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Germany">Germany</option>
+                            <option value="France">France</option>
+                            <option value="China">China</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Malaysia">Malaysia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select id="state">
+                            <option value="">Select State</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Germany">Germany</option>
+                        <option value="France">France</option>
+                        <option value="China">China</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="South Korea">South Korea</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Malaysia">Malaysia</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="currency">Currency</label>
+                        <select id="currency">
+                            <option value="">Select Currency</option>
+                            <option value="AED">AED</option>
+                            <option value="AFN">AFN</option>
+                            <option value="ALL">ALL</option>
+                            <option value="AMD">AMD</option>
+                            <option value="ANG">ANG</option>
+                            <option value="AOA">AOA</option>
+                            <option value="ARS">ARS</option>
+                            <option value="AUD">AUD</option>
+                            <option value="AWG">AWG</option>
+                            <option value="AZN">AZN</option>
+                            <option value="BAM">BAM</option>
+                            <option value="BBD">BBD</option>
+                            <option value="BDT">BDT</option>
+                            <option value="BGN">BGN</option>
+                            <option value="BHD">BHD</option>
+                            <option value="BIF">BIF</option>
+                            <option value="BMD">BMD</option>
+                            <option value="BND">BND</option>
+                            <option value="BOB">BOB</option>
+                            <option value="BRL">BRL</option>
+                            <option value="BSD">BSD</option>
+                            <option value="BTN">BTN</option>
+                            <option value="BWP">BWP</option>
+                            <option value="BYN">BYN</option>
+                            <option value="BZD">BZD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CDF">CDF</option>
+                            <option value="CHF">CHF</option>
+                            <option value="CLP">CLP</option>
+                            <option value="CNY">CNY</option>
+                            <option value="COP">COP</option>
+                            <option value="CRC">CRC</option>
+                            <option value="CUC">CUC</option>
+                            <option value="CUP">CUP</option>
+                            <option value="CVE">CVE</option>
+                            <option value="CZK">CZK</option>
+                            <option value="DJF">DJF</option>
+                            <option value="DKK">DKK</option>
+                            <option value="DOP">DOP</option>
+                            <option value="DZD">DZD</option>
+                            <option value="EGP">EGP</option>
+                            <option value="ERN">ERN</option>
+                            <option value="ETB">ETB</option>
+                            <option value="EUR">EUR</option>
+                            <option value="FJD">FJD</option>
+                            <option value="FKP">FKP</option>
+                            <option value="FOK">FOK</option>
+                            <option value="GBP">GBP</option>
+                            <option value="GEL">GEL</option>
+                            <option value="GGP">GGP</option>
+                            <option value="GHS">GHS</option>
+                            <option value="GIP">GIP</option>
+                            <option value="GMD">GMD</option>
+                            <option value="GNF">GNF</option>
+                            <option value="GTQ">GTQ</option>
+                            <option value="GYD">GYD</option>
+                            <option value="HKD">HKD</option>
+                            <option value="HNL">HNL</option>
+                            <option value="HRK">HRK</option>
+                            <option value="HTG">HTG</option>
+                            <option value="HUF">HUF</option>
+                            <option value="IDR">IDR</option>
+                            <option value="ILS">ILS</option>
+                            <option value="IMP">IMP</option>
+                            <option value="INR">INR</option>
+                            <option value="IQD">IQD</option>
+                            <option value="IRR">IRR</option>
+                            <option value="ISK">ISK</option>
+                            <option value="JEP">JEP</option>
+                            <option value="JMD">JMD</option>
+                            <option value="JOD">JOD</option>
+                            <option value="JPY">JPY</option>
+                            <option value="KES">KES</option>
+                            <option value="KGS">KGS</option>
+                            <option value="KHR">KHR</option>
+                            <option value="KID">KID</option>
+                            <option value="KMF">KMF</option>
+                            <option value="KRW">KRW</option>
+                            <option value="KWD">KWD</option>
+                            <option value="KYD">KYD</option>
+                            <option value="KZT">KZT</option>
+                            <option value="LAK">LAK</option>
+                            <option value="LBP">LBP</option>
+                            <option value="LKR">LKR</option>
+                            <option value="LRD">LRD</option>
+                            <option value="LSL">LSL</option>
+                            <option value="LYD">LYD</option>
+                            <option value="MAD">MAD</option>
+                            <option value="MDL">MDL</option>
+                            <option value="MGA">MGA</option>
+                            <option value="MKD">MKD</option>
+                            <option value="MMK">MMK</option>
+                            <option value="MNT">MNT</option>
+                            <option value="MOP">MOP</option>
+                            <option value="MRU">MRU</option>
+                            <option value="MUR">MUR</option>
+                            <option value="MVR">MVR</option>
+                            <option value="MWK">MWK</option>
+                            <option value="MXN">MXN</option>
+                            <option value="MYR">MYR</option>
+                            <option value="MZN">MZN</option>
+                            <option value="NAD">NAD</option>
+                            <option value="NGN">NGN</option>
+                            <option value="NIO">NIO</option>
+                            <option value="NOK">NOK</option>
+                            <option value="NPR">NPR</option>
+                            <option value="NZD">NZD</option>
+                            <option value="OMR">OMR</option>
+                            <option value="PAB">PAB</option>
+                            <option value="PEN">PEN</option>
+                            <option value="PGK">PGK</option>
+                            <option value="PHP">PHP</option>
+                            <option value="PKR">PKR</option>
+                            <option value="PLN">PLN</option>
+                            <option value="PYG">PYG</option>
+                            <option value="QAR">QAR</option>
+                            <option value="RON">RON</option>
+                            <option value="RSD">RSD</option>
+                            <option value="RUB">RUB</option>
+                            <option value="RWF">RWF</option>
+                            <option value="SAR">SAR</option>
+                            <option value="SBD">SBD</option>
+                            <option value="SCR">SCR</option>
+                            <option value="SDG">SDG</option>
+                            <option value="SEK">SEK</option>
+                            <option value="SGD">SGD</option>
+                            <option value="SHP">SHP</option>
+                            <option value="SLL">SLL</option>
+                            <option value="SOS">SOS</option>
+                            <option value="SRD">SRD</option>
+                            <option value="SSP">SSP</option>
+                            <option value="STN">STN</option>
+                            <option value="SYP">SYP</option>
+                            <option value="SZL">SZL</option>
+                            <option value="THB">THB</option>
+                            <option value="TJS">TJS</option>
+                            <option value="TMT">TMT</option>
+                            <option value="TND">TND</option>
+                            <option value="TOP">TOP</option>
+                            <option value="TRY">TRY</option>
+                            <option value="TTD">TTD</option>
+                            <option value="TVD">TVD</option>
+                            <option value="TWD">TWD</option>
+                            <option value="TZS">TZS</option>
+                            <option value="UAH">UAH</option>
+                            <option value="UGX">UGX</option>
+                            <option value="USD">USD</option>
+                            <option value="UYU">UYU</option>
+                            <option value="UZS">UZS</option>
+                            <option value="VES">VES</option>
+                            <option value="VND">VND</option>
+                            <option value="VUV">VUV</option>
+                            <option value="WST">WST</option>
+                            <option value="XAF">XAF</option>
+                            <option value="XCD">XCD</option>
+                            <option value="XDR">XDR</option>
+                            <option value="XOF">XOF</option>
+                            <option value="XPF">XPF</option>
+                            <option value="YER">YER</option>
+                            <option value="ZAR">ZAR</option>
+                            <option value="ZMW">ZMW</option>
+                            <option value="ZWL">ZWL</option>
+                        </select>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fiscal-year">F/Y Start Month</label>
+                        <select id="fiscal-year">
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="buttons">
+                   <a href="after_company_create.html"> <button type="button" class="create">Create</button></a>
+                    <button type="button" class="close">Close</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="bank-detail" class="tab-content" style="height: 150px;">
+            <div class="row">
+            <form>
+                <div class="form-group-bank">
+                    <label for="account-number">Account Number</label>
+                    <input type="text" id="account-number" placeholder="" style="width: 275px;">
+                </div>
+                <div class="form-group-bank" style="position: relative; bottom: 60px; left:315px;">
+                    <label for="bank-name">Bank Name</label>
+                    <input type="text" id="bank-name" placeholder="" style="width: 275px;">
+                </div>
+                
+            </div>
+                <div class="form-group-bank"  style="position: relative; bottom: 50px;">
+                    <label for="ifsc-code">IFSC Code</label>
+                    <input type="text" id="ifsc-code" placeholder=""style="width: 275px;">
+                </div>
+                
+                <div class="buttons"style="text-align: center; margin-top: 325px;">
+                    <button type="button" class="create">Create</button>
+                </div>
+            </form>
+        </div>
+        <script>
+       const accountNumberInput = document.getElementById('account-number');
+const bankNameInput = document.getElementById('bank-name');
+const accountNumberError = document.getElementById('account-number-error');
+const bankNameError = document.getElementById('bank-name-error');
+
+// Restrict account number to only digits and limit length
+accountNumberInput.addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, ''); // Removes non-digit characters
+    if (this.value.length > 14) {
+        this.value = this.value.slice(0, 14); // Limit max length to 14 digits
+    }
+});
+
+// Restrict bank name to only letters and spaces
+bankNameInput.addEventListener('input', function() {
+    this.value = this.value.replace(/[^A-Za-z\s]/g, ''); // Removes non-letter characters
+});
+
+// Validate fields on save button click
+document.getElementById('save-button').addEventListener('click', function() {
+    accountNumberError.textContent = '';
+    bankNameError.textContent = '';
+
+    const accountNumberPattern = /^(?:\d{11}|\d{12,14})$/;
+    if (!accountNumberPattern.test(accountNumberInput.value.trim())) {
+        accountNumberError.textContent = 'Account number must be 11, or between 12 and 14 digits.';
+    }
+
+    if (bankNameInput.value.trim() === '' || !/^[A-Za-z\s]+$/.test(bankNameInput.value.trim())) {
+        bankNameError.textContent = 'Bank name must contain only letters.';
+    }
+});
+
+
+
+        </script>
+
+<div id="other-detail" class="tab-content" style="height: 300px;">
+    <form>
+        <!-- Other form fields -->
+        <div class="form-group">
+            <label for="industry">Food License No.</label>
+            <input type="text" id="industry" placeholder="" style="width: 275px;">
+        </div>
+        <div class="form-group" style="position: relative; bottom: 75px; left:315px;">
+            <label for="website">Drug License No.</label>
+            <input type="url" id="website" placeholder=""style="width: 275px;">
+        </div>
+        <div class="form-group" style="position: relative; bottom:77px;">
+            <label for="tan">Tan No.</label>
+            <input type="url" id="tan" placeholder=""style="width: 275px;">
+        </div>
+        <div class="form-group" style="position: relative; bottom: 150px; left:315px;">
+            <label for="cin">Cin No.</label>
+            <input type="text" id="cin" placeholder=" "style="width: 275px;">
+        </div>
+
+        <!-- Logo Upload Section -->
+        <div class="form-group logo-section"style="position: relative; bottom: 110px;">
+            <div class="logo-preview" id="logoPreview">
+                <!-- Default initials -->
+                <span id="logoInitials">SC</span>
+            </div>
+            <div class="logo-instructions">
+                <label for="logoUpload">Drag Logo Image here</label>
+                <span>or</span>
+                <label for="logoUpload" class="browse-link">Browse image</label>
+                <input type="file" id="logoUpload" accept="image/*" style="display: none;" />
+            </div>
+        </div>
+
+        <div class="buttons" style="text-align: center; margin-top: 120px;">
+            <button type="button" class="create">
+                Create
+            </button>
+      
+    </form>
+</div>
+<script>
+
+const logoUpload = document.getElementById('logoUpload');
+const logoPreview = document.getElementById('logoPreview');
+const logoInitials = document.getElementById('logoInitials');
+
+// Handle file input change
+logoUpload.addEventListener('change', handleFile);
+
+// Handle drag-and-drop
+logoPreview.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    logoPreview.classList.add('dragging');
+});
+
+logoPreview.addEventListener('dragleave', () => {
+    logoPreview.classList.remove('dragging');
+});
+
+logoPreview.addEventListener('drop', (e) => {
+    e.preventDefault();
+    logoPreview.classList.remove('dragging');
+    const file = e.dataTransfer.files[0];
+    if (file) {
+        processFile(file);
+    }
+});
+
+// Handle file input or drop
+function handleFile(event) {
+    const file = event.target.files[0];
+    if (file) {
+        processFile(file);
+    }
+}
+
+function processFile(file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        // Display uploaded image
+        logoInitials.style.display = 'none';
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        logoPreview.innerHTML = ''; // Clear existing content
+        logoPreview.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+}
+</script>
+
+<div id="taxation" class="tab-content" style="height: 500px;">
+    <form>
+        <div class="form-group taxation-header">
+            <label for="toggleTax"></label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="toggleTax" />
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="tax-id">GST Number</label>
+            <input type="text" id="tax-id" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="pan">PAN Number</label>
+            <input type="text" id="pan" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="tan">GST Category</label>
+            <input type="text" id="tan" placeholder="">
+        </div>
+        <div class="buttons">
+            <button type="button" class="create">Save</button>
+        </div>
+    </form>
+</div> <!-- Ensure this closing div is correct -->
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Corrected selector for multiple class groups
+            const inputs = document.querySelectorAll('.form-group input, .form-group-bank input');
+            
+            inputs.forEach((input, index) => {
+                input.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault(); // Prevent form submission
+                        const nextInput = inputs[index + 1];
+                        if (nextInput) {
+                            nextInput.focus(); // Move to the next input
+                        } else {
+                            inputs[0].focus(); // Optional: Loop back to the first input
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <script>
+        // Toggle Taxation Fields Enable/Disable
+        let toggleTax = document.getElementById('toggleTax');
+        toggleTax.addEventListener('change', function () {
+            const isEnabled = this.checked; // true if checkbox is checked
+            const fields = document.querySelectorAll('.form-group input:not(#toggleTax)');
+        
+            fields.forEach(field => {
+    if (isEnabled) {
+        field.classList.add('field-enabled');
+        field.classList.remove('field-disabled');
+    } else {
+        field.classList.add('field-disabled');
+        field.classList.remove('field-enabled');
+    }
+    field.disabled = !isEnabled; // Disable or enable fields
+});
+
+        });
+        
+        // GST Number Validation and Auto-fill for PAN
+        document.getElementById('tax-id').addEventListener('input', function () {
+            let gstin = this.value;
+            if (gstin.length > 15) {
+                this.value = gstin.substring(0, 15); // Limit input to 15 characters
+            }
+            if (gstin.length === 15) {
+                const panNumber = gstin.substring(2, 12); // Extract PAN from GSTIN
+                document.getElementById('pan').value = panNumber; // Auto-fill PAN Number
+            } else {
+                document.getElementById('pan').value = ''; // Clear PAN if GSTIN is not 15 characters
+            }
+        });
+        
+        // Tab Switching Logic (if applicable)
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active')); // Remove active class from all tabs
+                tab.classList.add('active'); // Add active class to the clicked tab
+        
+                tabContents.forEach(tc => tc.classList.remove('active')); // Hide all tab contents
+                document.getElementById(tab.dataset.tab).classList.add('active'); // Show the active tab content
+            });
+        });
+        </script>
+        
+</body>
+</html>

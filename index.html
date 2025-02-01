@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="index.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
+  	
+  	
+  	
+</head>
+<body>
+  	
+  	<div class="sign-up">
+    		<img class="vector-icon" alt="" src="vector.jpg">
+    		
+    		<div class="sign-up-inner">
+      			
+      			
+    		</div>
+    		<div class="group-parent">
+      			<div class="text-wrapper">
+        				<div class="text">Already Have an Account</div>
+      			</div>
+      			<div class="button-select" id="LoginButton">
+                    <b class="text1">Log in</b>
+                </div>
+                  <script>
+                    document.getElementById('LoginButton').addEventListener('click', function() {
+                        window.location.href = 'Log_in.html'; // Redirects to the specified page
+                    });
+                </script>
+      			<div class="or-wrapper">
+        				<div class="or">Or</div>
+      			</div>
+      			<img class="image-225-icon" alt="" src="image-225.png"image225>
+      			
+      			<div class="text2">Scan from mobile Balance App</div>
+      			<div class="open-balance-app-container">
+        				<ol class="open-balance-app-on-your-phone">
+          					<li class="open-balance-app">Open Balance App on your Phone</li>
+          					<li class="open-balance-app">Goto Setting &gt; Device &gt; Scan QR Code</li>
+          					<li>Scan the image to login</li>
+        				</ol>
+      			</div>
+    		</div>
+            <div class="sign-up-child">
+                <div class="rectangle-parent">
+                    <div class="rectangle-child"></div>
+                    <div class="text3">Sign up</div>
+                    <div class="text4">Create New Account.</div>
+                    
+                    <!-- Input for Mobile Number -->
+                    <div class="text-box">
+                        <div class="content">
+                            <div class="text5">+91</div>
+                        </div>
+                        <div class="text-box-child"></div>
+                        <input 
+                            type="text" 
+                            id="mobileNumber" 
+                            class="text6" 
+                            placeholder="Enter Mobile No." 
+                            style="background: transparent; border: none; outline: none; width: 280px; color: rgba(255, 255, 255, 0.6); font-family: Poppins;"
+                        />
+                        <div class="can-not-empty" id="mobileError" style="display: none; color: #ff0101; font-size: 10px;">Error message here</div>
+                    </div>
+                    
+                    <!-- Input for Name -->
+                    <div class="text-box1">
+                        <input 
+                            type="text" 
+                            id="userName" 
+                            class="text7" 
+                            placeholder="Your Name" 
+                            style="background: transparent; border: none; outline: none; width: 350px; color: rgba(255, 255, 255, 0.6); font-family: Poppins;"
+                        />
+                        <div class="can-not-empty1" id="nameError" style="display: none; color: #ff0101; font-size: 10px;">Error message here</div>
+                    </div>
+                    
+                    <!-- Sign-Up Button -->
+                    <div class="component-64">
+                        <div class="button-select1" id="signUpButton">
+                            <b class="sign-up1">SIGN UP</b>
+                        </div>
+                    </div>
+                    
+                    <!-- Alternative Sign-In Options -->
+                    <div class="text8">or Sign in with</div>
+                    <div class="button-select2" id="buttonSelectContainer">
+                        <a href="whatsapp_no.html" style="text-decoration: none; display: flex; align-items: center;">
+                            <b class="whatsapp">WhatsApp</b>
+                            <img class="image-255-icon" alt="" src="image-255.png" style="cursor: pointer;">
+                        </a>
+                    </div>
+                    
+                    <div class="button-select3" id="buttonSelectContainer1">
+                        <b class="google">Google</b>
+                        <img class="image-icon" alt="" src="image.png">
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                document.getElementById('signUpButton').addEventListener('click', function () {
+                    const mobileNumber = document.getElementById('mobileNumber').value.trim();
+                    const userName = document.getElementById('userName').value.trim();
+            
+                    let valid = true;
+            
+                    // Mobile number validation
+                    if (mobileNumber === '') {
+                        document.getElementById('mobileError').textContent = 'Cannot be empty';
+                        document.getElementById('mobileError').style.display = 'block';
+                        valid = false;
+                    } else if (!/^\d+$/.test(mobileNumber)) {
+                        document.getElementById('mobileError').textContent = 'Invalid input';
+                        document.getElementById('mobileError').style.display = 'block';
+                        valid = false;
+                    } else if (mobileNumber.length !== 10) {
+                        document.getElementById('mobileError').textContent = 'Invalid input (must be 10 digits)';
+                        document.getElementById('mobileError').style.display = 'block';
+                        valid = false;
+                    } else {
+                        document.getElementById('mobileError').style.display = 'none';
+                    }
+            
+                    // Name validation
+                    if (userName === '') {
+                        document.getElementById('nameError').textContent = 'Cannot be empty';
+                        document.getElementById('nameError').style.display = 'block';
+                        valid = false;
+                    } else if (!/^[a-zA-Z\s]+$/.test(userName)) {
+                        document.getElementById('nameError').textContent = 'Invalid input';
+                        document.getElementById('nameError').style.display = 'block';
+                        valid = false;
+                    } else {
+                        document.getElementById('nameError').style.display = 'none';
+                    }
+            
+                    if (valid) {
+                        alert('Form submitted successfully!');
+                        const action = 'signup'; // Define the action here (e.g., 'signup' or 'login')
+                        window.location.href = `After_sign_in.html?action=${action}`; // Append the action to the URL
+                    }
+                });
+            </script>
+            
+            
+            
+            
+            
+    		</div>
+    		<img class="sign-up-item" alt="" src="group-2614338.jpg">
+    		
+    		<div class="frame-div">
+    		</div>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    		var image225 = document.getElementById("image225");
+    		if(image225) {
+      			image225.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var buttonSelectContainer = document.getElementById("buttonSelectContainer");
+    		if(buttonSelectContainer) {
+      			buttonSelectContainer.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var buttonSelectContainer1 = document.getElementById("buttonSelectContainer1");
+    		if(buttonSelectContainer1) {
+      			buttonSelectContainer1.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}</script></body>
+</html>

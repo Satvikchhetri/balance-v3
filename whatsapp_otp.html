@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <link rel="stylesheet" href="csss/whatsapp_OTP.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" />
+</head>
+<body>
+    <div class="whtsapp-otp">
+        <div class="sign-up-wrapper">
+            <img class="sign-up-wrapper" alt="" src="vector.jpg">
+
+            <div class="rectangle-parent">
+                <div class="rectangle">
+                    <div class="rectangle-child"></div>
+
+                    <div class="text">
+                        <p class="an-otp-send-on-your-whatsapp">
+                            <span class="an-otp-send">An OTP send on your WhatsApp No. </span>
+                            <span class="span">+91</span>
+                            <span class="span1"> </span>
+                            <span class="span">234567899</span>
+                        </p>
+                        <p class="wrong-no">Wrong No.,</p>
+                    </div>
+
+                    <div class="text-wrapper">
+                        <a href="whatsapp_no.html" class="text1">
+                            <span class="change-here">Change here</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text2">OTP</div>
+
+                <div class="button-select1">
+                    <input type="text" placeholder="Enter OTP" class="otp-input">
+                </div>
+
+                <div class="component-64">
+                    <div class="button-select" id="verifyButton">
+                        <b class="sign-up1">VERIFY</b>
+                    </div>
+                </div>
+                
+                <script>
+                    // Add an event listener to handle the button click
+                    const action = 'wverify'; // Define the action here (e.g., 'signup' or 'login')
+                    const verifyButton = document.getElementById('verifyButton');
+                    verifyButton.addEventListener('click', function () {
+                        window.location.href = `After_sign_in.html?action=${action}`; // Redirect with the action in the URL
+                    });
+                </script>
+                
+                
+            </div>
+
+            <img class="sign-up-child" alt="" src="group-2614338.jpg">
+        </div>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            line-height: normal;
+        }
+
+        .whtsapp-otp {
+            width: 100%;
+            position: relative;
+            height: 982px;
+            text-align: left;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: Inter;
+        }
+
+        .rectangle-child {
+            position: absolute;
+            height: 101%;
+            width: 101.11%;
+            top: -0.5%;
+            right: -0.56%;
+            bottom: -0.5%;
+            left: -0.56%;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 3px solid #fff;
+            box-sizing: border-box;
+        }
+
+        .otp-input {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #0e1527;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 7px;
+            box-sizing: border-box;
+        }
+
+        .otp-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .button-select {
+            width: 396px;
+            border-radius: 7px;
+            background-color: #299c26;
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 15px;
+            box-sizing: border-box;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button-select1 {
+            position: absolute;
+            top: calc(50% - 6.5px);
+            left: calc(50% - 198px);
+            border-radius: 7px;
+            width: 396px;
+        }
+
+        .text1 {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            line-height: 18px;
+            font-weight: 500;
+            color: #299c26;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .component-64 {
+            position: absolute;
+            top: calc(50% + 60.5px);
+            left: calc(50% - 198px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .text2 {
+            position: absolute;
+            top: 127px;
+            left: 73px;
+            font-size: 28px;
+            line-height: 100%;
+            font-weight: 600;
+            font-family: Poppins;
+            color: #299c26;
+        }
+
+        .rectangle-parent {
+            position: absolute;
+            top: calc(50% - 324px);
+            left: calc(50% - 270px);
+            width: 540px;
+            height: 601px;
+        }
+
+        .sign-up-wrapper {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 1512px;
+            height: 982px;
+        }
+        
+    </style>
+</body>
+</html>

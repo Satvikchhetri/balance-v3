@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="csss/after_sign_up.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" />
+  	
+  	
+  	
+</head>
+<body>
+  	
+  	<div class="after-sing-up">
+    		<div class="signup">
+      			<div class="signup-child">
+      			</div>
+      			<div class="signup-inner">
+        				
+        				
+      			</div>
+      			<div class="component-64" id="component64Container">
+        				<div class="button-select" id="buttonSelectContainer">
+          					<b class="create-company">Create Company</b>
+        				</div>
+                        <script>
+                            document.getElementById('buttonSelectContainer').addEventListener('click', function() {
+                                window.location.href = 'company_create_form.html'; // Redirects to the specified page
+                            });
+                        </script>
+                        
+      			</div>
+    		</div>
+    		<div class="it-seems-that-container">
+      			<p class="it-seems-that">It seems that no Company has been created.
+        				Please create a new company first.</p>
+      			<p class="blank-line">&nbsp;</p>
+    		</div>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    		var buttonSelectContainer = document.getElementById("buttonSelectContainer");
+    		if(buttonSelectContainer) {
+      			buttonSelectContainer.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var component64Container = document.getElementById("component64Container");
+    		if(component64Container) {
+      			component64Container.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}</script></body>
+</html>

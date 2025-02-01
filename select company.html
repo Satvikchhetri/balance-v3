@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+	<link rel="stylesheet" href="globals.css">
+  	
+  	<link rel="stylesheet"  href="select company.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
+  	
+  	
+  	
+</head>
+<body>
+  	
+	<div class="select-company">
+		<div class="signup">
+			<div class="signup-inner">
+			</div>
+			<div class="signup-child">
+				<div class="instance-parent">
+					<div class="group-wrapper">
+						<div class="instance-parent">
+							<div class="instance-parent">
+								<div class="group-child">
+								</div>
+								<img class="icon" alt="" src="menu-icon.png">
+							<div class="search-company">
+    <input 
+        type="text" 
+        placeholder="Search Company..." 
+        class="search-input" 
+    />
+</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="instance-group">
+						<div class="folder-1-wrapper">
+							<img class="folder-1-icon" alt="" src="folder-1.png">
+						</div>
+						<a href="company_create_form.html" class="image-link">
+							<img class="plus-icon" alt="" src="Group 2612538.png">
+						</a>
+						
+					</div>
+					<div class="table-header-cell-parent">
+						<div class="table-header-cell">
+							<div class="tablke-header-left-parent">
+								<div class="tablke-header-left">
+									<div class="table-header">
+										<div class="text">Company </div>
+									</div>
+								</div>
+								<div class="tablke-header-left1">
+									<div class="table-header">
+										<div class="text">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="frame-parent">
+						<!-- Frame 1 -->
+
+<div class="frame-group">
+	<img class="photo-icon" alt="" src="photo2.png" />
+	<div class="text-wrapper">
+	  <div class="text2">MAKE BOKER</div>
+	</div>
+	<img class="image-173-icon" alt="" src="image-173.png" />
+	<img class="menu-icon" alt="" src="menu-icon.png" onclick="toggleMenu(1)" />
+	<div class="menu-dropdown" id="menuDropdown1">
+	  <div class="menu-item">
+		<img class="menu-option-icon" alt="" src="draw 1.png" onclick="modifyRedirect()" /> Modify
+	  </div>
+	  <div class="menu-item">
+		<img class="menu-option-icon" alt="" src="image 78.png" onclick="shareRedirect(this)" /> Share
+	  </div>
+	  <div class="menu-item">
+		<img class="menu-option-icon" alt="" src="image 171.png" onclick="showDeletePopup('MAKE BOKER')" /> Delete Company
+	  </div>
+	</div>
+  </div>
+
+  <!-- Popup for Delete Confirmation-->
+  <div class="delete-popup">
+    <div class="logout-modal">
+        <div class="company-box">
+            <div class="company-header">
+                <div class="container-wrapper">
+                    <div class="container-wrapper">
+                        <div class="container-wrapper">
+                            <div class="container-wrapper">
+                                <div class="container-wrapper">
+                                    <div class="container-wrapper">
+                                        <div class="title-text">Phoenix Baker</div>
+                                        <img class="user-avatar" alt="" src="Avatar.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="logout-icon-wrapper">
+            </div>
+            <div class="logout-content">
+                <div class="parent-wrapper">
+                    <div class="secondary-button-wrapper">
+                        <div class="primary-button-wrapper">
+                            <div class="primary-button-wrapper">
+                                <div class="primary-button-wrapper">
+                                    <div class="primary-button-wrapper">
+                                        <div class="primary-button-wrapper">
+                                            <div class="extra-button-wrapper">
+                                                <div class="button-wrapper">
+                                                    <div class="action-button">
+                                                        <b class="main-text">Yes</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="select company.html">
+                                                <div class="primary-button">
+                                                    <b class="close-button">No</b>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="confirmation-header">
+                            <div class="confirmation-box">
+                                <div class="confirmation-container">
+                                    <p class="confirmation-message">
+                                        <span>
+                                            <span>Are You Sure want </span>
+                                        </span>
+                                    </p>
+                                    <p class="confirmation-message">
+                                        <span>
+                                            <span>to </span>
+                                            <b class="delete-warning">”DELETE”</b>
+                                        </span>
+                                        <span>
+                                            <span>
+                                                <span> this Company</span>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p class="post-deletion-message">
+                                        <span>
+                                            <span>After performing the delete action, as it cannot be undone.</span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="confirmation-icon" alt="" src="image-101.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+// Function to open the popup and display the company name and icon
+function showDeletePopup(companyName, iconSrc) {
+    var popup = document.querySelector(".delete-popup"); // Target the delete popup
+    var companyText = popup.querySelector(".title-text"); // Target the element displaying the company name
+    var avatarIcon = popup.querySelector(".user-avatar"); // Target the avatar image
+
+    companyText.innerText = companyName; // Set the company name in the popup
+    avatarIcon.src = iconSrc; // Set the icon source in the popup
+    popup.style.display = "block"; // Display the popup
+
+    // Hide the dropdown menu when the popup appears
+    var dropdown = document.querySelector(".menu-dropdown");
+    if (dropdown) {
+        dropdown.style.display = "none";
+    }
+}
+
+// Add event listeners to "Delete Company" buttons dynamically
+document.querySelectorAll(".menu-item img[src='image 171.png']").forEach(function(button) {
+    button.addEventListener("click", function() {
+        var frameGroup = button.closest('.frame-group'); // Get the closest frame group
+        var companyName = frameGroup.querySelector('.text2').innerText; // Get the company name
+        var iconSrc = frameGroup.querySelector('.photo-icon').src; // Get the icon source (photo-icon)
+        
+        showDeletePopup(companyName, iconSrc); // Show the popup with dynamic content
+    });
+});
+
+// Ensure the popup is hidden by default and set up event listeners
+// Ensure the popup is hidden by default and set up event listeners
+document.addEventListener("DOMContentLoaded", function() {
+    var popup = document.querySelector(".delete-popup");
+    if (popup) {
+        popup.style.display = "none"; // Ensure popup is hidden on load
+    }
+
+    // Add event listener to the "No" button
+    var noButton = document.querySelector(".primary-button .close-button");
+    if (noButton) {
+        noButton.addEventListener("click", function () {
+            popup.style.display = "none"; // Close the popup
+        });
+    }
+});
+
+
+</script>
+
+
+
+ 
+
+
+
+
+
+<div class="frame-container">
+  <img class="photo-icon1" alt="" src="photo3.png" />
+  <div class="text-container">
+    <div class="text2">Morphis mans</div>
+  </div>
+  <img class="union-icon" alt="" src="union.png" />
+  <img class="menu-icon" alt="" src="menu-icon.png" onclick="toggleMenu(2)" />
+  <div class="menu-dropdown" id="menuDropdown2">
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="draw 1.png" onclick="modifyRedirect()" /> Modify
+    </div>
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="image 78.png" onclick="shareRedirect(this)" /> Share
+    </div>
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="image 171.png" /> Delete Company
+    </div>
+  </div>
+</div>
+
+<!-- Frame 3 -->
+<div class="frame-parent1">
+  <img class="photo-icon2" alt="" src="photo4.png" />
+  <div class="text-wrapper">
+    <div class="text2">Morphis LTD</div>
+  </div>
+  <img class="image-173-icon" alt="" src="image-173.png" />
+  <img class="menu-icon" alt="" src="menu-icon.png" onclick="toggleMenu(3)" />
+  <div class="menu-dropdown" id="menuDropdown3">
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="draw 1.png" onclick="modifyRedirect()" /> Modify
+    </div>
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="image 78.png" onclick="shareRedirect(this)" /> Share
+    </div>
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="image 171.png" /> Delete Company
+    </div>
+  </div>
+</div>
+
+<!-- Frame 4 -->
+<div class="frame-parent2">
+  <img class="photo-icon3" alt="" src="avatar.png" />
+  <div class="text-wrapper">
+    <div class="text2">Phoenix Baker</div>
+  </div>
+  <img class="image-173-icon" alt="" src="image-173.png" />
+  <img class="menu-icon" alt="" src="menu-icon.png" onclick="toggleMenu(4)" />
+  <div class="menu-dropdown" id="menuDropdown4">
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="draw 1.png" onclick="modifyRedirect()" /> Modify
+    </div>
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="image 78.png" onclick="shareRedirect(this)" /> Share
+    </div>
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="image 171.png" /> Delete Company
+    </div>
+  </div>
+</div>
+
+<!-- Frame 5 -->
+<div class="frame-parent3">
+  <img class="photo-icon4" alt="" src="photo.png" />
+  <div class="text-wrapper">
+    <div class="text2">Manz man</div>
+  </div>
+  <img class="image-173-icon" alt="" src="image-173.png" />
+  <img class="menu-icon" alt="" src="menu-icon.png" onclick="toggleMenu(5)" />
+  <div class="menu-dropdown" id="menuDropdown5">
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="draw 1.png" onclick="modifyRedirect()" /> Modify
+    </div>
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="image 78.png" onclick="shareRedirect(this)" /> Share
+    </div>
+    <div class="menu-item">
+      <img class="menu-option-icon" alt="" src="image 171.png" /> Delete Company
+    </div>
+  </div>
+</div>
+
+<script>
+// Function to store the selected avatar when a frame is clicked
+function selectAvatar(imageSrc) {
+  localStorage.setItem('selectedAvatar', imageSrc);
+}
+
+// Add event listeners to frames to store avatar when clicked
+document.querySelectorAll('.frame-group, .frame-container, .frame-parent1, .frame-parent2, .frame-parent3').forEach(frame => {
+  frame.addEventListener('click', function() {
+    const avatarImage = this.querySelector('img'); // Get the image inside the frame
+    if (avatarImage) {
+      selectAvatar(avatarImage.src); // Store the image source
+    }
+  });
+});
+</script>
+
+					
+					<script>
+						// Function to redirect to a new page when Modify is clicked
+						function modifyRedirect() {
+							window.location.href = "modify_company.html"; // Replace with your target URL
+						}
+					</script>
+					
+				<script>function shareRedirect(element) {
+					// Create the anchor element dynamically
+					const anchor = document.createElement("a");
+				
+					// Set the href attribute for the anchor tag
+					anchor.href = "share_company.html";  // Replace with the link you want the share option to go to
+				
+					// Optionally, set target="_blank" if you want to open the link in a new tab
+					anchor.target = "_blank";  
+				
+					// Wrap the clicked image in the anchor tag
+					anchor.appendChild(element.cloneNode(true));
+				
+					// Replace the image with the anchor tag (including the image inside it)
+					element.parentElement.replaceChild(anchor, element);
+				}
+				</script>
+				<a href="log_in.html">
+					<div class="button-select-nor">
+						<b class="text7">LOG OUT</b>
+					</div>
+				</a>
+				
+				<div class="signup-inner1-nor" id="groupContainer1-nor">
+					<a href="login_setting.html">
+						<div class="image-224-parent-nor">
+							<img class="image-224-icon-nor" alt="" src="image-224.png">
+							<div class="text8">Profile</div>
+						</div>
+					</a>
+				</div>
+				
+				<style>
+					.text8 {
+						color: white; /* Change the text color to white */
+					}
+				
+					.text8 a {
+						color: inherit; /* Ensure the link color inherits the color from .text8 */
+					}
+				</style>
+				
+				<div class="component-123-nor">
+					<div class="component-123-child-nor"></div>
+					<img class="power-1-icon-nor" alt="" src="power-1.png">
+				</div>
+			</div>
+		</div>
+		<div id="superUserLogin" class="popup-overlay" style="display:none">
+			<div class="super-user-login">
+				<div class="text9">Default Name</div>
+				<img class="avatar-icon1" alt="" src="Avatar.png" />
+				<div class="input">
+					<input 
+						type="text" 
+						id="pinInput" 
+						maxlength="4" 
+						placeholder="PIN" 
+						onfocus="removePlaceholder()" 
+						onblur="restorePlaceholder()" 
+					/>
+				</div>
+				<div class="group-parent">
+					<div class="button-select2">
+						<b class="text11">OK</b>
+					</div>
+					<div class="button-select1" onclick="closePopup()">
+						<b class="text11">
+							<span class="c">C</span>lose
+						</b>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		// Function to display popup
+		function showPopup(frame) {
+		  var popup = document.getElementById("superUserLogin");
+		  var menuDropdowns = document.querySelectorAll('.menu-dropdown');
+		  
+		  // Check if any menu dropdown is open
+		  if (Array.from(menuDropdowns).some(menu => menu.style.display === 'block')) {
+			return; // Prevent the popup from showing if a dropdown is open
+		  }
+	  
+		  if (!popup) return;
+	  
+		  // Extract name and icon
+		  var name = frame.querySelector(".text2")?.textContent || "Unknown";
+		  var iconSrc = frame.querySelector("img")?.src || "Avatar.png";
+		
+		  // Update popup content
+		  popup.querySelector(".text9").textContent = name;
+		  popup.querySelector(".avatar-icon1").src = iconSrc;
+		
+		  // Show popup with fade-in effect
+		  popup.style.display = "flex";
+		  popup.style.backgroundColor = "rgba(113, 113, 113, 0.3)";
+		  popup.style.justifyContent = "center";
+		  popup.style.alignItems = "center";
+		}
+	  
+		// Function to close popup
+		function closePopup() {
+		  var popup = document.getElementById("superUserLogin");
+		  if (popup) {
+			popup.style.display = "none";
+		  }
+		}
+	  
+		// Add event listeners to all frames
+		var frames = document.querySelectorAll(".frame-group, .frame-container, .frame-parent1, .frame-parent2, .frame-parent3");
+		frames.forEach(function (frame) {
+		  frame.addEventListener("click", function (event) {
+			event.stopPropagation(); // Prevent the event from bubbling up
+			showPopup(this);
+		  });
+		});
+	  
+		// Close the popup if clicked outside
+		window.addEventListener("click", function (event) {
+		  var popup = document.getElementById("superUserLogin");
+		  if (popup && !popup.contains(event.target)) {
+			closePopup();
+		  }
+		});
+	  
+		// PIN input field functionality
+		const pinInput = document.getElementById("pinInput");
+	  
+		function removePlaceholder() {
+		  pinInput.placeholder = ''; // Remove placeholder text when focused
+		}
+	  
+		function restorePlaceholder() {
+		  if (pinInput.value === '') {
+			pinInput.placeholder = 'PIN'; // Restore placeholder if no input is entered
+		  }
+		}
+	  
+		pinInput.addEventListener("focus", removePlaceholder);
+		pinInput.addEventListener("blur", restorePlaceholder);
+	  
+		// Menu toggle functionality
+		function toggleMenu(frameId) {
+		  const menuDropdown = document.getElementById('menuDropdown' + frameId);
+		  const popup = document.getElementById("superUserLogin");
+	  
+		  // Close the popup if it's open when the menu is clicked
+		  if (popup && popup.style.display === 'flex') {
+			closePopup();
+		  }
+		
+		  // Toggle visibility of the dropdown
+		  if (menuDropdown.style.display === 'block') {
+			menuDropdown.style.display = 'none';
+		  } else {
+			// Close other open dropdowns
+			const allMenus = document.querySelectorAll('.menu-dropdown');
+			allMenus.forEach(menu => {
+			  menu.style.display = 'none';
+			});
+			// Open the clicked menu
+			menuDropdown.style.display = 'block';
+		  }
+		}
+	  
+		// Close the dropdown if clicked outside
+		window.addEventListener("click", function (event) {
+		  const allMenus = document.querySelectorAll('.menu-dropdown');
+		  allMenus.forEach(menu => {
+			if (!menu.contains(event.target) && !menu.previousElementSibling.contains(event.target)) {
+			  menu.style.display = 'none'; // Close the menu if clicked outside
+			}
+		  });
+		});
+	  
+	  </script>
+	  
+	  
+	  
+	  <style>
+	
+		.input input {
+    background-color: transparent; /* Make the background transparent */
+    border: none; /* Remove the border */
+    color: white; /* Set the text color to white (you can adjust based on your preference) */
+    font-size: 14px; /* Adjust the font size */
+    padding: 10px; /* Adjust padding for better readability */
+    width: 100%; /* Make the input take up the full width of its parent container */
+    outline: none; /* Remove the default focus outline */
+}
+
+.input input::placeholder {
+    color: #aaa; /* Set the placeholder text color */
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute; /* Keep it absolute to position relative to the parent */
+    background-color:11234A;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.664);
+    border-radius: 4px;
+    top: 0; /* Align it vertically to the top of the parent frame */
+    left: 100%; /* Position the dropdown to the right of the icon */
+    margin-left: 10px; /* Optional: add spacing between icon and dropdown */
+    width: 150px;
+    z-index: 1000; /* Ensure it is above other elements */
+    max-height: 300px; /* Optional: Limit max height */
+    overflow-y: auto; /* Optional: Add scroll if the menu items exceed the max height */
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-item:hover {
+    background-color: #f1f1f1;
+	color:black
+}
+
+.menu-option-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+
+	  </style>
+<!--      delete pop up --> 
+<!---
+<div class="company-delete-pop-up">
+	<div class="logout-no">
+	<div class="company-3">
+	<div class="company-3-inner">
+	<div class="group-wrapper">
+	<div class="group-wrapper">
+	<div class="group-wrapper">
+	<div class="group-wrapper">
+	<div class="group-wrapper">
+	<div class="group-wrapper">
+	<div class="text">Phoenix Baker</div>
+	<img class="avatar-icon" alt="" src="Avatar.png">
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<div class="logout-no-child">
+	</div>
+	<div class="logout-no-inner">
+	<div class="group-parent">
+	<div class="group-wrapper2">
+	<div class="group-wrapper3">
+	<div class="group-wrapper3">
+	<div class="group-wrapper3">
+	<div class="group-wrapper3">
+	<div class="group-wrapper3">
+	<div class="group-wrapper7">
+	<div class="button-select-wrapper">
+	<div class="button-select">
+	<b class="text1">Yes</b>
+	</div>
+	</div>
+	</div>
+	<div class="button-select1">
+	<b class="close">No</b>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<div class="group-wrapper8">
+	<div class="are-you-sure-want-to-delete-wrapper">
+	<div class="are-you-sure-container">
+	<p class="are-you-sure-want">
+	<span>
+	<span>Are You Sure want </span>
+	</span>
+	</p>
+	<p class="are-you-sure-want">
+	<span>
+	<span>to </span>
+	<b class="delete">”DELETE”</b>
+	</span>
+	<span>
+	<span>
+	<span> this Company</span>
+	</span>
+	</span>
+	</p>
+	<p class="after-performing-the-delete-ac">
+	<span>
+	<span>After performing the delete action, as it cannot be undone.</span>
+	</span>
+	</p>
+	</div>
+	</div>
+	</div>
+	<img class="image-101-icon" alt="" src="image-101.png">
+	</div>
+	</div>
+	</div>
+</div>
+-->
+		  
+		  </body>
+</html>

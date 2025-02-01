@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="csss/OTP_Sign_up.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" />
+  	
+  	
+  	
+</head>
+<body>
+  	
+  	<div class="otp-sign-up">
+    		<div class="sign-up-wrapper">
+      			<div class="sign-up">
+        				<img class="sign-up-wrapper" alt="" src="vector.jpg">
+        				
+        				<div class="rectangle-parent">
+          					<div class="rectangle">
+            						<div class="rectangle-child">
+            						</div>
+            						<div class="text">
+              							<p class="an-otp-send-on-your-mobile-no">
+                								<span>An OTP send on your mobile No. </span>
+                								<span class="span">1234567899</span>
+              							</p>
+              							<p class="wrong-no">Wrong  No. , </p>
+            						</div>
+            						<div class="text-wrapper">
+              							<div class="text1" id="text">
+                								<span class="change-here">Change here</span>
+              							</div>
+                                          <script>
+                                            document.getElementById('text').addEventListener('click', function() {
+                                                window.location.href = 'index.html'; // Redirects to the specified page
+                                            });
+                                        </script>
+            						</div>
+          					</div>
+          					<div class="text2">OTP</div>
+          					<div class="component-64">
+            						<div class="button-select" id="buttonSelectContainer">
+              							<b class="sign-up1">VERIFY</b>
+            						</div>
+                                    <script>
+                                        document.getElementById('buttonSelectContainer').addEventListener('click', function() {
+                                            const action = 'verify'; // Define the action here (e.g., 'signup' or 'login')
+            window.location.href = `After_sign_in.html?action=${action}`; // Append the action to the URL
+                                        });
+                                    </script>
+          					</div>
+          					<div class="button-select1">
+            						<div class="mobile-no">
+              							<div class="mobile-no-inner">
+                								<div class="mobile-no-inner">
+                  									<div class="input">
+                    										<div class="text3">12345</div>
+                  									</div>
+                								</div>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+        				<div class="sign-up-inner">
+          					
+          					
+        				</div>
+        				<img class="sign-up-child" alt="" src="group-2614338.jpg">
+        				
+      			</div>
+    		</div>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    		var text = document.getElementById("text");
+    		if(text) {
+      			text.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var buttonSelectContainer = document.getElementById("buttonSelectContainer");
+    		if(buttonSelectContainer) {
+      			buttonSelectContainer.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}</script></body>
+</html>
